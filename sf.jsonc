@@ -1,0 +1,5 @@
+{
+  "$schema": "https://spacefast.com/schemas/sf.json",
+  "name": "farmasi-algerie-shop",
+  "runtime": { "kind": "zero", "server": "server/index.ts" }
+}

@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="images/brand/logo.jpg"><title>فارماسي الجزائر</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Josefin+Sans:wght@400&family=Montserrat:wght@500&display=swap" rel="stylesheet">
+<style>
+:root{color-scheme:light;--bg:#fff;--ink:#1f2540;--mute:#6b7088;--pink:#e8336d;--soft:#fdeef3;--line:#eceaf0;--card:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,Tahoma,sans-serif;line-height:1.6}
+header{display:flex;align-items:center;justify-content:space-between;padding:14px 18px;border-bottom:1px solid var(--line);position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);z-index:5}
+.logo{font-weight:800;font-size:22px;letter-spacing:.18em;direction:ltr}
+.logo b{color:var(--pink)}
+.wa{background:#25d366;color:#fff;text-decoration:none;font-weight:600;padding:8px 14px;border-radius:999px;font-size:14px}
+.hero{padding:34px 18px 28px;background:var(--soft)}
+.hero h1{font-size:30px;line-height:1.3;margin:0 0 10px;font-weight:800}
+.hero p{margin:0 0 18px;color:var(--mute);max-width:34ch}
+.btn{display:inline-block;background:var(--pink);color:#fff;text-decoration:none;font-weight:600;padding:12px 22px;border-radius:10px}
+section{padding:28px 18px}
+h2{font-size:22px;margin:0 0 4px;font-weight:800}
+.sub{color:var(--pink);font-size:14px;font-weight:600;margin:0}
+.cats{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:16px}
+.cat{border-radius:16px;min-height:120px;padding:14px;display:flex;align-items:flex-end;font-weight:800;font-size:18px;color:#3a2a2a}
+.c1{background:#feecd3}.c2{background:#fbc9de}.c3{background:#e2c6e6}.c4{background:#d6e8d4}
+.prods{display:flex;gap:12px;overflow-x:auto;margin-top:16px;padding-bottom:8px}
+.p{flex:0 0 200px;border:1px solid var(--line);background:var(--card);border-radius:12px;padding:12px}
+.img{height:130px;border-radius:8px;background:var(--soft);display:flex;align-items:center;justify-content:center;color:var(--mute);font-size:13px;margin-bottom:10px}
+.img img{height:100%;width:100%;object-fit:contain;border-radius:8px}.price{font-weight:800;color:var(--pink);margin-top:4px}.p h3{font-size:15px;margin:0 0 4px;font-weight:600}
+.p small{color:var(--mute)}
+.p a{display:block;text-align:center;margin-top:10px;border:1.5px solid var(--pink);color:var(--pink);text-decoration:none;border-radius:8px;padding:7px;font-weight:600;font-size:14px}
+.how{background:var(--soft)}
+.how ol{margin:12px 0 0;padding-inline-start:20px}
+footer{padding:22px 18px 30px;text-align:center;color:var(--mute);font-size:13px;border-top:1px solid var(--line)}
+.prods{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;overflow:visible}.p{flex:none;display:flex;flex-direction:column;min-width:0}.p .img{height:170px;background:#fff}.row{display:flex;justify-content:space-between;align-items:center;margin-top:auto;padding-top:10px}.row .price{font-size:18px;margin:0}.p a.add{margin:0;width:40px;height:40px;padding:0;display:flex;align-items:center;justify-content:center;font-size:26px;line-height:1;border-radius:2px}#order{scroll-margin-top:70px}.f{display:block;margin-top:12px;font-weight:600;font-size:14px}.f input,.f select,.f textarea{display:block;width:100%;margin-top:4px;padding:11px 12px;border:1px solid var(--line);border-radius:8px;font:inherit;background:#fff;color:var(--ink)}.f input:focus,.f select:focus,.f textarea:focus{outline:2px solid var(--pink);outline-offset:1px}.send{display:block;margin-top:18px;background:#25d366;color:#fff;text-align:center;text-decoration:none;font-weight:800;padding:14px;border-radius:10px}.err{color:#c0152f;font-size:13px;margin:8px 0 0;min-height:18px}.hl{display:flex;align-items:center;gap:8px}.menu-btn{width:42px;height:42px;border:0;background:none;padding:0;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:5px;cursor:pointer}.menu-btn i{display:block;width:24px;height:2.5px;background:var(--ink);border-radius:2px}
+.ov{position:fixed;inset:0;background:rgba(20,22,42,.45);opacity:0;visibility:hidden;transition:opacity .3s,visibility 0s .3s;z-index:20}.ov.on{opacity:1;visibility:visible;transition:opacity .3s}
+.dr{position:fixed;top:0;bottom:0;width:min(88vw,380px);background:#fff;z-index:21;display:flex;flex-direction:column;visibility:hidden;transition:transform .3s cubic-bezier(.4,0,.2,1),visibility 0s .3s;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);box-shadow:0 0 30px rgba(0,0,0,.18)}
+[dir=rtl] .dr{right:0;transform:translateX(100%)}[dir=ltr] .dr{left:0;transform:translateX(-100%)}.dr.on{transform:none;visibility:visible;transition:transform .3s cubic-bezier(.4,0,.2,1)}
+.dh{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;border-bottom:1px solid var(--line)}.x{width:42px;height:42px;border:0;background:none;font-size:32px;line-height:1;color:var(--ink);cursor:pointer}
+.ds{overflow-y:auto;flex:1;padding:0 16px 24px;-webkit-overflow-scrolling:touch}
+.sr{display:flex;margin:16px 0 8px;border:1.5px solid var(--line);border-radius:10px;overflow:hidden}.sr input{flex:1;min-width:0;border:0;padding:12px;font:inherit;background:#fff;color:var(--ink)}.sr button{border:0;background:var(--pink);color:#fff;width:48px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.sr svg,.mi svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.mi{display:flex;align-items:center;gap:12px;width:100%;padding:14px 4px;border:0;border-bottom:1px solid var(--line);background:none;color:var(--ink);font:inherit;font-weight:600;text-decoration:none;text-align:start;cursor:pointer}.mi svg{color:var(--pink)}.mi.off{opacity:.55;cursor:not-allowed}
+.mi em{margin-inline-start:auto;font-style:normal;font-size:12px;background:var(--soft);color:var(--pink);padding:2px 10px;border-radius:999px}
+.ct{font-weight:800;margin:20px 0 4px;color:var(--ink)}
+details{border-bottom:1px solid var(--line)}summary{list-style:none;display:flex;justify-content:space-between;align-items:center;padding:14px 4px;font-weight:600;cursor:pointer}summary::-webkit-details-marker{display:none}
+summary::after{content:"";width:8px;height:8px;border:solid var(--pink);border-width:0 2px 2px 0;transform:rotate(45deg);transition:transform .2s}details[open] summary::after{transform:rotate(-135deg)}
+details a,details p{display:block;margin:0;padding:9px 12px;font-size:14px;color:var(--ink);text-decoration:none}details p{color:var(--mute)}
+.lg{display:flex;gap:8px;margin-top:20px}.lg button{flex:1;padding:10px 4px;border:1.5px solid var(--line);background:#fff;border-radius:8px;font:inherit;font-weight:600;color:var(--ink);cursor:pointer}.lg button.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+.sb{display:flex;justify-content:space-between;align-items:center;gap:8px;margin:12px 0;font-size:14px}.sb[hidden],.p[hidden]{display:none}.sb button{border:0;background:none;color:var(--pink);font:inherit;font-weight:600;cursor:pointer}
+.hl-on{outline:3px solid var(--pink);outline-offset:2px}.p{scroll-margin-top:80px}#products,#collections{scroll-margin-top:70px}body.lock{overflow:hidden}html[dir=rtl] #ph{text-align:right}
+.msr{display:flex;align-items:center;margin:12px 16px 0;border:1.5px solid var(--line);border-radius:12px;background:#f6f7fb;overflow:hidden}.msr input{flex:1;min-width:0;border:0;background:none;padding:14px;font:inherit;color:var(--ink)}.msr button{border:0;background:none;color:var(--ink);width:50px;height:48px;display:flex;align-items:center;justify-content:center;cursor:pointer}.msr svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+section.sl{padding:14px 16px 6px}.trk{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;overscroll-behavior-x:contain}.trk::-webkit-scrollbar,.thb::-webkit-scrollbar{display:none}
+.sd{flex:0 0 100%;scroll-snap-align:center;display:block;aspect-ratio:2/3;background:var(--soft)}.sd img{width:100%;height:100%;object-fit:contain;display:block;-webkit-user-drag:none}
+.thb{display:flex;gap:10px;overflow-x:auto;margin-top:12px;padding:4px 2px 8px;scrollbar-width:none}.th{flex:0 0 72px;height:90px;padding:0;border:2px solid transparent;border-radius:6px;background:var(--soft);cursor:pointer;opacity:.65;overflow:hidden;transition:opacity .2s,border-color .2s}.th img{width:100%;height:100%;object-fit:contain;display:block}.th.on{border-color:var(--pink);opacity:1;box-shadow:0 4px 10px rgba(0,0,0,.15)}
+[hidden]{display:none!important}.ctr{text-align:center;margin-bottom:18px}
+.help{background:#f4f5f9}.hg{display:grid;grid-template-columns:1fr 1fr;gap:12px}.hc{background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 14px;display:flex;flex-direction:column;align-items:flex-start;box-shadow:0 2px 8px rgba(31,37,64,.05);min-width:0}
+.ic{width:46px;height:46px;border-radius:50%;background:var(--soft);color:var(--pink);display:flex;align-items:center;justify-content:center;margin-bottom:10px}.ic svg,.fl svg,.ar svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.hc h3{font-size:15px;margin:0 0 4px;font-weight:800;color:var(--ink)}.hc p{margin:0 0 12px;font-size:13px;color:var(--mute)}
+.hb{margin-top:auto;width:100%;text-align:center;text-decoration:none;font:inherit;font-weight:600;font-size:13px;color:var(--pink);background:#fff;border:1.5px solid var(--pink);border-radius:8px;padding:8px 6px;cursor:pointer}.hc:nth-child(3) .hb{background:#25d366;border-color:#25d366;color:#fff}
+.dt{display:none;font-size:13px;margin-top:10px;padding:10px;background:var(--soft);border-radius:10px;width:100%}.hc.open .dt{display:block}.lk{color:var(--pink);font-weight:600}
+.ig-s{background:#fff}.ib{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:10px 14px;margin-bottom:16px}.il{font-weight:800;font-size:20px;letter-spacing:.16em;direction:ltr}.il b{color:var(--pink)}.il small{display:block;font-size:10px;letter-spacing:.4em;text-align:center;color:var(--mute)}
+.in{font-weight:600;color:var(--ink)}.fl{display:inline-flex;align-items:center;gap:6px;background:var(--pink);color:#fff;text-decoration:none;font-weight:600;padding:9px 18px;border-radius:999px}.fl svg{width:18px;height:18px}.soon{font-size:13px;color:var(--mute);background:var(--soft);padding:6px 12px;border-radius:999px}
+.ig{position:relative}.gt{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;padding:2px}.gt::-webkit-scrollbar{display:none}
+.gi{flex:0 0 62%;max-width:280px;aspect-ratio:4/5;scroll-snap-align:start;border-radius:18px;overflow:hidden;background:var(--soft);position:relative;border:1px solid var(--line)}.gi img,.gi video{width:100%;height:100%;object-fit:contain;display:block}.lk2{cursor:pointer}
+.vd{display:block;width:100%;height:100%;padding:0;border:0;background:none;cursor:pointer;position:relative}.pl{position:absolute;inset:0;margin:auto;width:60px;height:60px;border-radius:50%;background:rgba(232,51,109,.92);color:#fff;display:flex;align-items:center;justify-content:center}.pl svg{width:28px;height:28px;fill:currentColor}
+.ar{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;border:0;background:#fff;color:var(--ink);box-shadow:0 2px 10px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:2}.al{left:4px}.arr{right:4px}
+.gi.more{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-decoration:none;color:var(--ink);font-weight:700;text-align:center;padding:16px;background:linear-gradient(135deg,#fdeef3,#fff)}.gi.more svg{width:44px;height:44px;fill:none;stroke:var(--pink);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.gi.more small{font-weight:600;color:var(--pink);font-size:14px}
+.lg{display:block;width:40px;height:40px;border-radius:10px;object-fit:cover}.lg.big{width:64px;height:64px;border-radius:16px;margin:0 auto 6px}.logo{display:flex;align-items:center}header{direction:ltr}.hr{display:flex;align-items:center;gap:2px}.hi{width:42px;height:42px;display:flex;align-items:center;justify-content:center;color:var(--ink)}.wa.fab{position:fixed;left:14px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:6;box-shadow:0 6px 18px rgba(37,211,102,.4);padding:12px 18px}section h2{text-align:center}section h2::after{content:"";display:block;width:44px;height:3px;border-radius:2px;background:var(--pink);margin:8px auto 0}.sub{text-align:center;text-transform:uppercase;letter-spacing:.14em;font-size:12px}.mq{overflow:hidden;direction:ltr;margin:18px 0 6px}.mq>div{overflow:hidden;white-space:nowrap}.mt1>div{display:inline-block;animation:mqs 22s linear infinite;font-weight:800;font-size:26px;padding:12px 0;background:var(--pink);color:#fff}.mt1>div+div{background:#fff;color:var(--pink);animation-direction:reverse}.mt1 i{font-style:normal;margin:0 16px}.mt1 span{margin:0}@keyframes mqs{to{transform:translateX(-50%)}}@media(prefers-reduced-motion:reduce){.mt1>div{animation:none}}.mt1>div{display:block;width:max-content}.mt1>div+div{animation-name:mqr}@keyframes mqr{from{transform:translateX(-50%)}to{transform:none}}.dist{margin:28px 16px;padding:28px 20px;border-radius:20px;background:linear-gradient(135deg,var(--soft),#fff);border:1px solid var(--line);text-align:center}.dist .dtx{color:var(--mute);line-height:1.8;margin:12px 0 18px}.dbtn{display:inline-block;background:#25d366;color:#fff;text-decoration:none;font-weight:700;padding:12px 24px;border-radius:999px}.learn{margin:0;padding:44px 20px;text-align:center;color:#fff;background:linear-gradient(160deg,#e8336d 0%,#b8265a 45%,#1f2540 100%)}.learn h2{color:#fff}.learn h2::after{background:#fff}.learn .lt{margin:0 0 6px;opacity:.9;font-size:18px}.lb{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:26px}.lb a{display:block;width:min(100%,280px);padding:16px 10px;border:2px solid rgba(255,255,255,.75);color:#fff;text-decoration:none;font-weight:700;font-size:17px;letter-spacing:.02em;border-radius:6px;direction:ltr}.lb a:active{background:rgba(255,255,255,.18)}.p .img,.p h3{cursor:pointer}.p h3:hover{color:var(--pink)}.pdo{position:fixed;inset:0;background:rgba(31,37,64,.55);z-index:20;opacity:0;pointer-events:none;transition:opacity .25s}.pdo.on{opacity:1;pointer-events:auto}.pd{position:fixed;left:0;right:0;bottom:0;max-height:90vh;overflow:auto;background:#fff;border-radius:22px 22px 0 0;z-index:21;transform:translateY(105%);transition:transform .3s;padding:10px 18px calc(22px + env(safe-area-inset-bottom,0px));box-shadow:0 -10px 40px rgba(0,0,0,.2)}.pd.on{transform:none}.pd .gr{width:44px;height:5px;border-radius:3px;background:var(--line);margin:0 auto 10px}.pd .px{position:absolute;top:10px;inset-inline-end:14px;width:38px;height:38px;border:0;border-radius:50%;background:var(--soft);font-size:24px;line-height:1;cursor:pointer;color:var(--ink)}.pd .pi{height:260px;border-radius:14px;background:var(--soft);display:flex;align-items:center;justify-content:center;margin:14px 0}.pd .pi img{max-width:100%;max-height:100%;object-fit:contain}.pd h3{font-size:20px;margin:0 0 4px}.pd .ps{color:var(--mute);margin:0 0 10px;font-size:14px}.pd .pp{color:var(--pink);font-weight:800;font-size:22px;margin:0 0 12px}.pd ul{margin:0 0 12px;padding-inline-start:20px;line-height:1.9}.pd h4{margin:14px 0 4px;font-size:15px}.pd .pn{color:var(--mute);font-size:13px;line-height:1.7;margin:0 0 14px}.pd .pb{display:flex;gap:10px}.pd .pb a,.pd .pb button{flex:1;text-align:center;padding:13px 8px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:2px solid var(--pink);font-family:inherit}.pd .pb .po{background:var(--pink);color:#fff}.pd .pb .pq{background:#fff;color:#25a35a;border-color:#25d366}.cat{position:relative;overflow:hidden;border:0;padding:0;min-height:0;aspect-ratio:4/5;display:block;cursor:pointer;font-family:inherit;box-shadow:0 6px 18px rgba(31,37,64,.12);transition:transform .2s;background:linear-gradient(150deg,#f06292,#e8336d 55%,#b8265a);-webkit-tap-highlight-color:transparent}.cat:active{transform:scale(.97)}.cat .cim{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;padding-bottom:26px}.cat img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.cat::after{content:"";position:absolute;left:0;right:0;bottom:0;height:55%;background:linear-gradient(to top,rgba(31,37,64,.72),rgba(31,37,64,0));pointer-events:none}.cat .cl{position:absolute;left:12px;right:12px;bottom:12px;z-index:1;color:#fff;font-weight:800;font-size:18px;text-align:start;text-shadow:0 1px 6px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:space-between;gap:6px}.cat .cl::after{content:"\2192";font-size:16px}[dir=rtl] .cat .cl::after{content:"\2190"}.vh{padding:34px 16px;background:linear-gradient(180deg,#fdeef3,#fff6f9);text-align:center}.vb{position:relative;aspect-ratio:9/16;max-width:320px;width:100%;border-radius:20px;overflow:hidden;margin:18px auto 0;background:linear-gradient(135deg,#f9c9dc,#fdeef3 55%,#fff);box-shadow:0 10px 28px rgba(232,51,109,.18);display:flex;align-items:center;justify-content:center}.vb video,.vb iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#000}.vb .pimg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.vp{position:relative;z-index:1;width:78px;height:78px;border-radius:50%;border:0;background:#fff;color:var(--pink);display:flex;align-items:center;justify-content:center;box-shadow:0 8px 24px rgba(232,51,109,.35);cursor:pointer;padding-inline-start:4px;transition:transform .2s}.vp:active{transform:scale(.94)}.vp::before{content:"";position:absolute;inset:-9px;border-radius:50%;border:2px solid rgba(255,255,255,.8)}.vn{position:absolute;z-index:1;left:12px;right:12px;bottom:12px;margin:0;background:rgba(255,255,255,.92);border-radius:12px;padding:8px 12px;font-size:13px;color:var(--ink)}
+.art{padding:34px 16px}.ag{display:grid;grid-template-columns:1fr;gap:16px;margin-top:20px}@media(min-width:560px){.ag{grid-template-columns:1fr 1fr}}.ac{background:#fff;border-radius:18px;overflow:hidden;box-shadow:0 6px 20px rgba(31,37,64,.1);border:1px solid var(--line);display:flex;flex-direction:column}.ac .ai{aspect-ratio:16/10;background:linear-gradient(135deg,#f9c9dc,#fdeef3);display:flex;align-items:center;justify-content:center;overflow:hidden;cursor:pointer}.ac .ai img{width:100%;height:100%;object-fit:cover}.ac .ai img.lo{width:90px;height:90px;border-radius:20px;object-fit:cover}.ac .ab{padding:16px;display:flex;flex-direction:column;gap:8px;flex:1}.ac .at{font-size:12px;color:var(--pink);font-weight:700;letter-spacing:.04em}.ac h3{margin:0;font-size:18px;line-height:1.5}.ac p{margin:0;color:var(--mute);line-height:1.8;font-size:14px}.ac .rm{margin-top:auto;align-self:flex-start;background:none;border:2px solid var(--pink);color:var(--pink);font-weight:700;border-radius:999px;padding:8px 18px;cursor:pointer;font-family:inherit;font-size:14px}.ac .rm:active{background:var(--soft)}
+.rdo{position:fixed;inset:0;background:rgba(31,37,64,.55);z-index:20;opacity:0;pointer-events:none;transition:opacity .25s}.rdo.on{opacity:1;pointer-events:auto}.rd{position:fixed;left:0;right:0;bottom:0;max-height:92vh;overflow:auto;background:#fff;border-radius:22px 22px 0 0;z-index:21;transform:translateY(105%);transition:transform .3s;padding:12px 20px calc(26px + env(safe-area-inset-bottom,0px));box-shadow:0 -10px 40px rgba(0,0,0,.2)}.rd.on{transform:none}.rd .gr{width:44px;height:5px;border-radius:3px;background:var(--line);margin:0 auto 12px}.rd .rx{position:absolute;top:10px;inset-inline-end:14px;width:38px;height:38px;border:0;border-radius:50%;background:var(--soft);font-size:24px;line-height:1;cursor:pointer;color:var(--ink)}.rd .ri{aspect-ratio:16/10;border-radius:14px;overflow:hidden;background:linear-gradient(135deg,#f9c9dc,#fdeef3);display:flex;align-items:center;justify-content:center;margin:14px 0}.rd .ri img{width:100%;height:100%;object-fit:cover}.rd .ri img.lo{width:110px;height:110px;border-radius:24px}.rd h3{font-size:21px;line-height:1.5;margin:0 0 10px}.rd .rb p{line-height:2;margin:0 0 12px}.rd .rb h4{margin:16px 0 4px}.rd .rb ul{padding-inline-start:20px;line-height:2;margin:0 0 12px}.soc{display:flex;justify-content:center;gap:14px;margin-bottom:14px}.soc a{width:44px;height:44px;border-radius:50%;border:2px solid var(--pink);color:var(--pink);display:flex;align-items:center;justify-content:center;transition:background .2s}.soc a:active{background:var(--soft)}.soc svg{width:22px;height:22px}footer{padding-bottom:84px}.rv{padding:36px 16px;background:#f6f6f8;text-align:center}.rvs{display:flex;align-items:center;justify-content:center;gap:8px;margin:14px 0 0;color:var(--mute);font-size:14px}.st{color:#f5a623;letter-spacing:2px;font-size:18px;direction:ltr;white-space:nowrap}.st i{font-style:normal;color:#d9d9e0}.rvt{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;gap:0;margin-top:18px}.rvt::-webkit-scrollbar{display:none}.rcard{flex:0 0 100%;scroll-snap-align:center;padding:0 4px;box-sizing:border-box}.rcard>div{background:#fff;border-radius:20px;padding:22px 20px;box-shadow:0 6px 20px rgba(31,37,64,.08);text-align:start;min-height:170px;display:flex;flex-direction:column;gap:10px}.rcard p{margin:0;line-height:1.9;color:var(--ink)}.rcard .rn{font-weight:800;margin-top:auto}.rcard .rsrc{color:var(--mute);font-size:13px}.rvc{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:14px}.rva{width:38px;height:38px;border-radius:50%;border:2px solid var(--pink);background:#fff;color:var(--pink);font-size:22px;line-height:1;cursor:pointer;padding:0}.rvd{display:flex;gap:8px}.rvd button{width:9px;height:9px;border-radius:50%;border:0;background:#d4d4dc;padding:0;cursor:pointer}.rvd button.on{background:var(--pink);width:22px;border-radius:5px}.rve{background:#fff;border-radius:20px;padding:26px 20px;margin-top:18px;box-shadow:0 6px 20px rgba(31,37,64,.08)}.rve p{color:var(--mute);line-height:1.9;margin:10px 0 16px}.rve .rb2{display:inline-block;background:var(--pink);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;padding:12px 24px}
+.sv{padding:36px 16px 40px;background:#fff;text-align:center}.svg{display:grid;grid-template-columns:1fr;gap:14px;margin-top:20px}@media(min-width:560px){.svg{grid-template-columns:1fr 1fr}}.sc2{background:#f6f6f8;border-radius:20px;padding:22px 18px;text-align:start;box-shadow:0 4px 14px rgba(31,37,64,.06);display:flex;flex-direction:column;gap:8px}.sc2 .si{width:52px;height:52px;border-radius:50%;background:#fff;color:var(--pink);display:flex;align-items:center;justify-content:center;box-shadow:0 4px 12px rgba(232,51,109,.15)}.sc2 .si svg{width:26px;height:26px}.sc2 h3{margin:4px 0 0;font-size:17px}.sc2 p{margin:0;color:var(--mute);line-height:1.8;font-size:14px}.sc2 a,.sc2 button{margin-top:10px;align-self:flex-start;display:inline-block;background:var(--pink);color:#fff;text-decoration:none;font-weight:700;border:0;border-radius:999px;padding:10px 20px;font-size:14px;cursor:pointer;font-family:inherit}.sc2 a.wa2{background:#25d366}.faq{margin-top:16px;text-align:start}.faq details{background:#f6f6f8;border-radius:14px;padding:14px 16px;margin-bottom:10px}.faq summary{font-weight:700;cursor:pointer}.faq details p{margin:10px 0 0;color:var(--mute);line-height:1.9}</style>
+<style>
+/* ===== اللوغو في الأعلى ===== */
+.bl{gap:10px;text-decoration:none;color:inherit;letter-spacing:0}
+.bw{display:flex;flex-direction:column;align-items:center;gap:5px;line-height:1;direction:ltr;padding:4px 0}
+.bw b{font-family:'Josefin Sans',Cairo,sans-serif;font-weight:400;font-size:26px;letter-spacing:.24em;color:var(--pink);margin-right:-.24em}
+.bw i{font-style:normal;font-family:Montserrat,Cairo,sans-serif;font-weight:500;font-size:8px;letter-spacing:.5em;color:#555;margin-right:-.5em}
+@media(max-width:360px){.bw b{font-size:22px}.bw i{font-size:7px}}
+/* ===== الكتالوغ الإلكتروني ===== */
+/* أزرار اللغات في القائمة الجانبية تبقى في سطر واحد */
+.dr div.lg{display:flex;width:auto;height:auto;border-radius:0}
+.btn2{background:#fff;color:var(--pink);border:1.5px solid var(--pink);margin-inline-start:8px}
+#catalog{scroll-margin-top:70px;background:linear-gradient(180deg,#fff,#fdf6f9 40%,#fff)}
+.kt{display:flex;flex-direction:column;align-items:center;gap:6px;margin:6px 0 14px;text-align:center}
+.kt p{margin:0;color:var(--mute);font-size:14px}
+.kfb{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border:0;border-radius:999px;padding:10px 18px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;margin-top:6px}
+.kfb svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ksr{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:12px;background:#fff;overflow:hidden;margin:4px 0 10px}
+.ksr svg{width:20px;height:20px;margin:0 12px;flex:none;fill:none;stroke:var(--mute);stroke-width:2;stroke-linecap:round}
+.ksr input{flex:1;min-width:0;border:0;padding:12px 0;font:inherit;background:none;color:var(--ink);outline:0}
+.ksr button{border:0;background:none;color:var(--mute);font-size:22px;width:42px;height:44px;cursor:pointer}
+.kch{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;padding:2px 0 10px;margin:0 -18px;padding-inline:18px;-webkit-overflow-scrolling:touch}
+.kch::-webkit-scrollbar{display:none}
+.kch button{flex:none;border:1.5px solid var(--line);background:#fff;color:var(--ink);border-radius:999px;padding:7px 14px;font:inherit;font-weight:600;font-size:14px;cursor:pointer;white-space:nowrap}
+.kch button.on{background:var(--pink);border-color:var(--pink);color:#fff}
+.kcnt{color:var(--mute);font-size:13px;margin:2px 0 6px}
+.kh{grid-column:1/-1;margin:14px 0 0;font-size:16px;font-weight:800;display:flex;align-items:center;gap:10px}
+.kh::after{content:"";flex:1;height:1px;background:var(--line)}
+.kg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+@media(min-width:640px){.kg{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(min-width:960px){.kg{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.kc{position:relative;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;cursor:pointer;transition:box-shadow .2s,transform .2s;content-visibility:auto;contain-intrinsic-size:auto 300px}
+.kc:active{transform:scale(.98)}
+@media(hover:hover){.kc:hover{box-shadow:0 8px 22px rgba(31,37,64,.1)}}
+.kc .ki{aspect-ratio:1;background:#f7f7f9;display:block;width:100%;height:auto;object-fit:cover}
+.kc .kb{padding:10px 10px 12px;display:flex;flex-direction:column;gap:2px;flex:1}
+.kc h3{margin:0;font-size:14px;line-height:1.45;font-weight:800}
+.kc .ko{font-size:11.5px;color:var(--mute);direction:ltr;text-align:start;line-height:1.4;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.kc .km{font-size:12px;color:var(--mute)}
+.kc .kr{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-top:auto;padding-top:8px}
+.kc .kp{font-weight:800;color:var(--pink);font-size:15px}
+.kc .kp.q{font-size:12px;font-weight:700;color:var(--ink)}
+.kc .ka{flex:none;width:36px;height:36px;border:1.5px solid var(--pink);background:#fff;color:var(--pink);font-size:24px;line-height:1;border-radius:2px;display:flex;align-items:center;justify-content:center;padding:0;cursor:pointer}
+.kbd{position:absolute;top:8px;inset-inline-start:8px;background:var(--pink);color:#fff;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
+.kdots{display:flex;gap:3px;margin-top:4px;flex-wrap:wrap}
+.kdots i{width:10px;height:10px;border-radius:50%;border:1px solid rgba(0,0,0,.08)}
+.kmore{display:block;margin:16px auto 0;border:1.5px solid var(--pink);background:#fff;color:var(--pink);font:inherit;font-weight:700;border-radius:999px;padding:10px 26px;cursor:pointer}
+.kempty{grid-column:1/-1;text-align:center;color:var(--mute);padding:24px 0}
+/* تفاصيل المنتج */
+.kdo{position:fixed;inset:0;background:rgba(31,37,64,.55);z-index:30;opacity:0;pointer-events:none;transition:opacity .25s}
+.kdo.on{opacity:1;pointer-events:auto}
+.kd{position:fixed;left:0;right:0;bottom:0;max-height:92vh;overflow:auto;background:#fff;border-radius:22px 22px 0 0;z-index:31;transform:translateY(105%);transition:transform .3s;padding:10px 18px calc(22px + env(safe-area-inset-bottom,0px));box-shadow:0 -10px 40px rgba(0,0,0,.2);max-width:640px;margin:0 auto}
+.kd.on{transform:none}
+.kd .gr{width:44px;height:5px;border-radius:3px;background:var(--line);margin:0 auto 10px}
+.kd .kx{position:absolute;top:10px;inset-inline-end:14px;width:38px;height:38px;border:0;border-radius:50%;background:var(--soft);font-size:24px;line-height:1;cursor:pointer;color:var(--ink);z-index:1}
+.kd .kdi{width:100%;max-width:340px;aspect-ratio:1;object-fit:cover;border-radius:16px;display:block;margin:10px auto 14px;background:#f7f7f9}
+.kd h3{font-size:20px;margin:0}
+.kd .kdn{direction:ltr;text-align:start;color:var(--mute);font-size:13px;margin:2px 0 8px}
+.kd .kdm{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.kd .kdm span{background:var(--soft);color:var(--ink);font-size:12.5px;padding:3px 10px;border-radius:999px}
+.kd .kdp{color:var(--pink);font-weight:800;font-size:22px;margin:0 0 8px}
+.kd .kdp.q{font-size:15px;color:var(--ink)}
+.kd .kdd{line-height:1.9;margin:0 0 12px}
+.kd h4{margin:12px 0 6px;font-size:15px}
+.ksh{display:flex;flex-wrap:wrap;gap:8px}
+.ksh button{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:6px 10px;font:inherit;font-size:13px;cursor:pointer;color:var(--ink);text-align:center;line-height:1.3}
+.ksh button small{display:block;color:var(--mute);font-size:11px;direction:ltr}
+.ksh button.on{border-color:var(--pink);background:var(--soft);box-shadow:0 0 0 1px var(--pink) inset}
+.kerr{color:#c0152f;font-size:13px;min-height:18px;margin:8px 0 0}
+.kd .pb{display:flex;gap:10px;margin-top:10px}
+.kd .pb a,.kd .pb button{flex:1;text-align:center;padding:13px 8px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;cursor:pointer;border:2px solid var(--pink);font-family:inherit}
+.kd .pb .po{background:var(--pink);color:#fff}
+.kd .pb .pq{background:#fff;color:#25a35a;border-color:#25d366}
+.kd .kpg{display:block;width:100%;margin-top:10px;background:none;border:0;color:var(--pink);font:inherit;font-weight:700;cursor:pointer;padding:8px}
+/* متصفح صفحات الكتالوغ */
+.kv{position:fixed;inset:0;z-index:40;background:#14162a;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .25s,visibility 0s .25s;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+.kv.on{opacity:1;visibility:visible;transition:opacity .25s}
+.kvh{display:flex;align-items:center;gap:8px;padding:10px 12px;color:#fff}
+.kvh select{flex:1;min-width:0;background:#24273f;color:#fff;border:0;border-radius:10px;padding:9px 10px;font:inherit;font-size:14px}
+.kvh button,.kvf button,.kvf a{border:0;background:#24273f;color:#fff;width:42px;height:42px;border-radius:50%;font-size:22px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;text-decoration:none;flex:none}
+.kvt{flex:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;direction:ltr;overscroll-behavior:contain}
+.kvt::-webkit-scrollbar{display:none}
+.kvp{flex:0 0 100%;scroll-snap-align:center;display:flex;align-items:center;justify-content:center;padding:6px}
+.kvp img{width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.4)}
+.kvf{display:flex;align-items:center;justify-content:center;gap:16px;padding:10px 12px 14px;color:#fff;font-weight:700;direction:ltr}
+.kvf span{min-width:90px;text-align:center}
+.kvf svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+</head>
+<body>
+<header><a class="logo bl" href="#" aria-label="Farmasi Algérie Shop"><span class="bw"><b>FARMASI</b><i>ALGÉRIE</i></span></a><div class="hr"><a class="hi" href="#q2" id="hs" aria-label="Search"><svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg></a><a class="hi" href="#order" aria-label="Order"><svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8a3 3 0 016 0"/></svg></a><button class="menu-btn" id="mb" type="button" aria-controls="dr" aria-label="Menu"><i></i><i></i><i></i></button></div>
+  </header>
+<a class="wa fab" href="https://wa.me/213797818235">واتساب</a>
+<div class="ov" id="ov"></div>
+<aside class="dr" id="dr" aria-hidden="true">
+<div class="dh"><div class="logo"><img class="lg" src="images/brand/logo.jpg" alt="FARMASI" width="40" height="40"></div><button class="x" id="cl" type="button">&times;</button></div>
+<div class="ds">
+<div class="sr"><input id="q" type="search" enterkeyhint="search"><button id="qb" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button></div>
+<button class="mi off" type="button" disabled aria-disabled="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg><span data-u="wheel"></span><em data-u="soon"></em></button>
+<a class="mi" id="mo" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4h8l9 9-8 8z"/><circle cx="7.5" cy="8.5" r="1"/></svg><span data-u="offers"></span></a>
+<a class="mi" href="#collections" data-go="collections"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg><span data-u="coll"></span></a>
+<a class="mi" href="#products" data-go="products"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg><span data-u="best"></span></a>
+<a class="mi" href="#catalog" data-go="catalog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5A2.5 2.5 0 016.5 3H20v15H6.5A2.5 2.5 0 004 20.5z"/><path d="M4 20.5A2.5 2.5 0 016.5 18H20v3H6.5A2.5 2.5 0 014 20.5zM8 7h8M8 11h6"/></svg><span id="kdml">الكتالوج الإلكتروني</span></a>
+<div class="ct" data-u="cats"></div><div id="catl"></div>
+<div class="lg"><button type="button" data-l="ar">العربية</button><button type="button" data-l="fr">Français</button><button type="button" data-l="en">English</button></div>
+</div></aside>
+
+
+<div class="msr"><input id="q2" type="search" enterkeyhint="search"><button id="qb2" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></button></div>
+<section class="sl" dir="ltr" aria-roledescription="carousel"><div class="trk" id="trk"></div><div class="thb" id="thb"></div></section>
+<div class="hero">
+  <h1>منتجات فارماسي<br>توصلك لباب دارك في الجزائر</h1>
+  <p>عناية بالبشرة والشعر، مكياج وعطور. الدفع عند الاستلام.</p>
+  <a class="btn" href="#products">شوف المنتجات</a><a class="btn btn2" id="kbtn" href="#catalog">تصفّح الكتالوج</a>
+</div>
+
+<div class="mq" aria-hidden="true"><div class="mt1"><div><span>Make Up</span><i>◦</i><span>Dr. C. Tuna</span><i>◦</i><span>Nutriplus</span><i>◦</i><span>Perfume</span><i>◦</i><span>Hair Care</span><i>◦</i><span>Skin Care</span><i>◦</i><span>Make Up</span><i>◦</i><span>Dr. C. Tuna</span><i>◦</i><span>Nutriplus</span><i>◦</i><span>Perfume</span><i>◦</i><span>Hair Care</span><i>◦</i><span>Skin Care</span><i>◦</i></div><div><span>Make Up</span><i>◦</i><span>Dr. C. Tuna</span><i>◦</i><span>Nutriplus</span><i>◦</i><span>Perfume</span><i>◦</i><span>Hair Care</span><i>◦</i><span>Skin Care</span><i>◦</i><span>Make Up</span><i>◦</i><span>Dr. C. Tuna</span><i>◦</i><span>Nutriplus</span><i>◦</i><span>Perfume</span><i>◦</i><span>Hair Care</span><i>◦</i><span>Skin Care</span><i>◦</i></div></div></div>
+<section id="collections">
+  <p class="sub">عوالم الصيدلية</p>
+  <h2>اكتشف منتجات فارماسي</h2>
+  <div class="cats">
+    <button class="cat" type="button" data-k="makeup"><span class="cim"></span><span class="cl">Make Up</span></button>
+    <button class="cat" type="button" data-k="tuna"><span class="cim"></span><span class="cl">Dr. C. Tuna</span></button>
+    <button class="cat" type="button" data-k="perf"><span class="cim"><svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="12" y="22" width="24" height="20" rx="5"/><path d="M19 22v-5h10v5M21 17v-5h6v5M24 28v8"/></svg></span><span class="cl">العطور</span></button>
+    <button class="cat" type="button" data-k="nutri"><span class="cim"><svg viewBox="0 0 48 48" width="56" height="56" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="13" y="16" width="22" height="26" rx="5"/><path d="M16 16v-4h16v4M13 26h22M24 31c-3-2-3-6 0-6 3 0 3 4 0 6z"/></svg></span><span class="cl">Nutriplus</span></button>
+  </div>
+</section>
+
+<section class="vh" id="video">
+  <p class="sub">Farmasi Algérie</p>
+  <h2>Farmasi | فارماسي</h2>
+  <div class="vb" id="vb"><button class="vp" id="vp" type="button" aria-label="Play"><svg viewBox="0 0 24 24" width="34" height="34" aria-hidden="true"><path d="M8 5.5v13l11-6.5z" fill="currentColor"/></svg></button><p class="vn" id="vn" hidden></p></div>
+</section>
+
+<section class="art" id="articles">
+  <h2>أحدث المقالات | Latest Articles</h2>
+  <div class="ag" id="ag"></div>
+</section>
+
+<div class="rdo" id="rdo"></div><div class="rd" id="rd" role="dialog" aria-modal="true" aria-hidden="true"></div>
+
+<section class="rv" id="reviews">
+  <p class="sub" id="rvk"></p>
+  <h2 id="rvh"></h2>
+  <div id="rvs"></div>
+  <div class="rvw" id="rvw" hidden><div class="rvt" id="rvt"></div><div class="rvc"><button class="rva" id="rvp" type="button" aria-label="Previous">&#8249;</button><div class="rvd" id="rvd"></div><button class="rva" id="rvn" type="button" aria-label="Next">&#8250;</button></div></div>
+  <div class="rve" id="rve" hidden></div>
+</section>
+
+<section class="sv" id="services">
+  <p class="sub" id="svk"></p>
+  <h2 id="svh"></h2>
+  <div class="svg" id="svg"></div>
+  <div class="faq" id="faq" hidden></div>
+</section>
+
+<section id="products">
+  <p class="sub">المفضل عند الزبائن</p>
+  <h2>الأكثر طلباً هذا الأسبوع</h2>
+  <div class="sb" id="sb" hidden><span id="st"></span><button id="sc" type="button"></button></div>
+  <div class="prods">
+    <div class="p" id="p1" data-cat="care tuna"><div class="img"><img src="images/products/p1.jpg" alt="شامبوان Dr. C. Tuna"></div><h3>شامبوان Dr. C. Tuna بالثوم والكابيكسيل</h3><small>500 مل</small><div class="row"><div class="price">800 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب شامبوان Dr. C. Tuna" aria-label="أطلب على واتساب">+</a></div></div>
+    <div class="p" id="p2" data-cat="makeup"><div class="img"><img src="images/products/p2.jpg" alt="جلوس مات فارماسي"></div><h3>جلوس مات Farmasi</h3><small>الدرجات: 01 · 03 · 04 · 07 · 10</small><div class="row"><div class="price">1100 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب جلوس مات Farmasi، الدرجة رقم " aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p3" data-cat="care"><div class="img"><img loading="lazy" decoding="async" src="images/products/p3.jpg" alt="شامبوان كيراتين فارماسي"></div><h3>شامبوان Keratin Therapy للشعر الجاف والمتضرر</h3><small>360 مل</small><div class="row"><div class="price">800 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب شامبوان Keratin Therapy" aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p4" data-cat="care"><div class="img"><img loading="lazy" decoding="async" src="images/products/p4.jpg" alt="ماسك كيراتين فارماسي"></div><h3>ماسك Keratin Therapy مرمم للشعر الجاف والمتضرر</h3><small>200 مل</small><div class="row"><div class="price">900 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب ماسك Keratin Therapy" aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p5" data-cat="care"><div class="img"><img loading="lazy" decoding="async" src="images/products/p5.jpg" alt="سيروم كيراتين فارماسي"></div><h3>سيروم Keratin Therapy مرمم للشعر</h3><small>30 مل</small><div class="row"><div class="price">1200 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب سيروم Keratin Therapy" aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p6" data-cat="makeup"><div class="img"><img loading="lazy" decoding="async" src="images/products/p6.jpg" alt="كريم CC فارماسي"></div><h3>كريم CC بيرفكتينغ 9 في 1 (Light 01)</h3><small>50 مل · SPF 25</small><div class="row"><div class="price">1600 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب كريم CC Farmasi Light 01" aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p7" data-cat="makeup"><div class="img"><img loading="lazy" decoding="async" src="images/products/p7.jpg" alt="سبراي تثبيت المكياج فارماسي"></div><h3>VFX Pro Time Locker سبراي تثبيت المكياج</h3><small>125 مل</small><div class="row"><div class="price">1500 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب سبراي تثبيت VFX Pro Time Locker" aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p8" data-cat="makeup"><div class="img"><img loading="lazy" decoding="async" src="images/products/p8.jpg" alt="كريم BB فارماسي"></div><h3>كريم BB 7 في 1 (Light)</h3><small>SPF 15</small><div class="row"><div class="price">1600 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب كريم BB Farmasi Light" aria-label="أطلب على واتساب">+</a></div></div>
+    
+  <div class="p" id="p9" data-cat="care tuna"><div class="img"><img loading="lazy" decoding="async" src="images/products/p9.jpg" alt="كريم الوجه شجرة الشاي"></div><h3>كريم الوجه Dr. C. Tuna بشجرة الشاي</h3><small>للبشرة الدهنية · ترطيب خفيف</small><div class="row"><div class="price">950 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب كريم Dr. C. Tuna Tea Tree" aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p10" data-cat="makeup"><div class="img"><img loading="lazy" decoding="async" src="images/products/p10.jpg" alt="حجاب الكمال فارماسي"></div><h3>كونسيلر حجاب الكمال Farmasi</h3><small>الدرجات: 01 · 03 · 04</small><div class="row"><div class="price">1100 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب كونسيلر حجاب الكمال Farmasi، الدرجة رقم " aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p11" data-cat="makeup"><div class="img"><img loading="lazy" decoding="async" src="images/products/p11.jpg" alt="ستيك بلوشر وبرونزور فارماسي"></div><h3>ستيك بلوشر وبرونزور Farmasi</h3><small>بلوشر · برونزر</small><div class="row"><div class="price">1400 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب ستيك بلوشر وبرونزور Farmasi، اللون " aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p12" data-cat="makeup"><div class="img"><img loading="lazy" decoding="async" src="images/products/p12.jpg" alt="قلم تحديد الشفاه فارماسي"></div><h3>قلم تحديد الشفاه Farmasi</h3><small>عدة ألوان</small><div class="row"><div class="price">750 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب قلم تحديد الشفاه Farmasi، اللون " aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p13" data-cat="makeup"><div class="img"><img loading="lazy" decoding="async" src="images/products/p13.jpg" alt="جلوس لامع فارماسي"></div><h3>جلوس لامع Farmasi</h3><small>00 Glass · 01 Fiery · 02 Flirt · 03 Lover · 04 Hot Chocolate · 05 Merry Berry</small><div class="row"><div class="price">1200 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب جلوس لامع Farmasi، الدرجة رقم " aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p14" data-cat="makeup"><div class="img"><img loading="lazy" decoding="async" src="images/products/p14.jpg" alt="شمع تثبيت الحواجب فارماسي"></div><h3>شمع تثبيت الحواجب Farmasi</h3><small>Brow Setting Wax · 25 غ</small><div class="row"><div class="price">1300 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب شمع تثبيت الحواجب Farmasi" aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p15" data-cat="makeup"><div class="img"><img loading="lazy" decoding="async" src="images/products/p15.jpg" alt="ملمّع شفاه فارماسي"></div><h3>ملمّع شفاه Farmasi</h3><small>ألوان متعددة</small><div class="row"><div class="price">1400 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب ملمّع شفاه Farmasi" aria-label="أطلب على واتساب">+</a></div></div><div class="p" id="p16" data-cat="care tuna"><div class="img"><img loading="lazy" decoding="async" src="images/products/p16.jpg" alt="بلسم تنظيف الوجه Dr. C. Tuna"></div><h3>بلسم تنظيف الوجه Dr. C. Tuna</h3><small>Cleansing Balm · 95 مل</small><div class="row"><div class="price">1900 دج</div><a class="add" href="https://wa.me/213797818235?text=سلام، حبيت نطلب بلسم تنظيف الوجه Dr. C. Tuna" aria-label="أطلب على واتساب">+</a></div></div></div>
+</section>
+
+<section id="catalog">
+  <p class="sub" id="ksub">كتالوج 2026</p>
+  <h2 id="kh2">الكتالوج الإلكتروني</h2>
+  <div class="kt"><p id="kp"></p><button class="kfb" id="kfb" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5h7a3 3 0 013 3v12a2 2 0 00-2-2H2zM22 5h-7a3 3 0 00-3 3v12a2 2 0 012-2h8z"/></svg><span id="kfbl">تصفّح صفحات الكتالوج</span></button></div>
+  <div class="ksr"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg><input id="kq" type="search" enterkeyhint="search" autocomplete="off"><button id="kqx" type="button">&times;</button></div>
+  <div class="kch" id="kch" role="toolbar"></div>
+  <p class="kcnt" id="kcnt" aria-live="polite"></p>
+  <div class="kg" id="kg"></div>
+</section>
+<div class="kdo" id="kdo"></div><div class="kd" id="kd" role="dialog" aria-modal="true" aria-hidden="true"></div>
+<div class="kv" id="kv" role="dialog" aria-modal="true" aria-hidden="true"><div class="kvh"><button id="kvx" type="button">&times;</button><select id="kvs"></select><a id="kvo" target="_blank" rel="noopener" style="width:42px;height:42px;border-radius:50%;background:#24273f;color:#fff;display:flex;align-items:center;justify-content:center"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></a></div><div class="kvt" id="kvt"></div><div class="kvf"><button id="kvprev" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><span id="kvn"></span><button id="kvnext" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div></div>
+
+<section class="dist" id="dist">
+  <p class="sub">Farmasi Algérie</p>
+  <h2>موزّع فارماسي في الجزائر</h2>
+  <p class="dtx">تحب تبيع منتجات Farmasi ولا تعرف كيفاش تولي موزّع؟ كلمنا على واتساب ونجاوبوك.</p>
+  <a class="dbtn" href="https://wa.me/213797818235?text=%D8%A7%D9%84%D8%B3%D9%84%D8%A7%D9%85%20%D8%B9%D9%84%D9%8A%D9%83%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%20%D9%86%D8%B9%D8%B1%D9%81%20%D9%83%D9%8A%D9%81%D8%A7%D8%B4%20%D9%86%D9%88%D9%84%D9%8A%20%D9%85%D9%88%D8%B2%D9%91%D8%B9%20Farmasi" target="_blank" rel="noopener">كلمنا على واتساب</a>
+</section>
+
+<section class="learn" id="learn">
+  <p class="lt">اعرف أكثر على</p>
+  <h2>Beauty Influencer</h2>
+  <div class="lb"><a href="https://wa.me/213797818235?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%20%D9%86%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%84%D9%89%20Beauty%20Influencer" target="_blank" rel="noopener">Beauty Influencer</a><a href="https://wa.me/213797818235?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%20%D9%86%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%84%D9%89%20Founders%20Club" target="_blank" rel="noopener">Founders Club</a><a href="https://wa.me/213797818235?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%20%D9%86%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%84%D9%89%20Achievers%20Circle" target="_blank" rel="noopener">Achievers Circle</a><a href="https://wa.me/213797818235?text=%D8%B3%D9%84%D8%A7%D9%85%D8%8C%20%D8%AD%D8%A7%D8%A8%20%D9%86%D8%B9%D8%B1%D9%81%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%84%D9%89%20Success%20Stories" target="_blank" rel="noopener">Success Stories</a></div>
+</section>
+
+<section class="how">
+  <h2>كيفاش تطلب؟</h2>
+  <ol>
+    <li>اختار المنتج وكليكي على +، وعمّر معلوماتك.</li>
+    <li>ابعث الطلب على واتساب.</li>
+    <li>تستلم وتخلص عند التوصيل.</li>
+  </ol>
+</section>
+
+<section id="order">
+  <p class="sub">الدفع عند الاستلام</p>
+  <h2>معلومات الزبون</h2>
+  <label class="f">المنتج<select id="prod"></select></label>
+  <label class="f">الكمية<input id="qty" type="number" min="1" value="1" inputmode="numeric"></label>
+  <label class="f">الإسم واللقب<input id="nm" type="text" autocomplete="name"></label>
+  <label class="f">رقم الهاتف<input id="ph" type="tel" inputmode="tel" autocomplete="tel" placeholder="05 / 06 / 07..." dir="ltr"></label>
+  <label class="f">الولاية<input id="wl" type="text" autocomplete="address-level1"></label>
+  <label class="f">العنوان (البلدية والحي)<textarea id="ad" rows="2"></textarea></label>
+  <label class="f">ملاحظة (اللون، الدرجة...)<input id="nt" type="text"></label>
+  <p class="err" id="er" role="alert"></p>
+  <a class="send" id="send" href="#order" target="_blank" rel="noopener">أرسل الطلب على واتساب</a>
+  <p class="or" id="ordor">ولا</p>
+  <input class="hpw" id="hpw" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+  <button class="send2" id="sendd" type="button">أكّد الطلب ديراكت من الموقع</button>
+  <div class="okb" id="okbox" role="status" hidden></div>
+</section>
+<section class="help" id="help">
+  <h2 class="ctr">كيف نقدر نعاونك؟</h2>
+  <div class="hg">
+    <div class="hc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 9v.01M18 15v.01"/></svg></span><h3>الدفع عند الاستلام</h3><p>تدفع نقداً عند وصول طلبك.</p><button class="hb" type="button" aria-expanded="false">تفاصيل الدفع</button><div class="dt">عمّر طلبك في الصفحة، يوصلنا على واتساب، وتدفع نقداً عند الاستلام.</div></div>
+    <div class="hc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 6h11v10H2zM13 9h4l3 3v4h-7"/><circle cx="6.5" cy="17.5" r="1.8"/><circle cx="16.5" cy="17.5" r="1.8"/></svg></span><h3>التوصيل إلى المنزل</h3><p>توصيل لجميع ولايات الجزائر الـ 58.</p><button class="hb" type="button" aria-expanded="false">تفاصيل التوصيل</button><div class="dt">مدة وسعر التوصيل: إسألنا على واتساب وقولنا ولايتك.<br><a class="lk" id="dlw" target="_blank" rel="noopener">إسأل على واتساب</a></div></div>
+    <div class="hc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-2a8 8 0 0116 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/><path d="M19 20c0 1.5-2 2-5 2"/></svg></span><h3>خدمة الزبائن</h3><p>كلمنا على واتساب نجاوبوك.</p><a class="hb" id="csw" target="_blank" rel="noopener">اتصل عبر واتساب</a></div>
+    <div class="hc"><span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></span><h3>اكتشف Farmasi</h3><p>Farmasi Algérie: عناية بالبشرة والشعر، مكياج وعطور، والدفع عند الاستلام.</p><a class="hb" href="#products" data-go2="products">اكتشف المزيد</a></div>
+  </div>
+</section>
+<section class="ig-s" id="insta">
+  <h2 class="ctr">تابعونا على Instagram</h2>
+  <div class="ib"><span class="il"><img class="lg big" src="images/brand/logo.jpg" alt="FARMASI" width="64" height="64"><small>ALGÉRIE</small></span><span class="in" id="ign" hidden dir="ltr"></span>
+    <a class="fl" id="igf" hidden target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg><span>تابعنا</span></a><span class="soon" id="igs">حساب Instagram يتزاد قريباً</span></div>
+  <div class="ig" dir="ltr"><button class="ar al" id="gp" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button><div class="gt" id="gt"></div><button class="ar arr" id="gn" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button></div>
+</section>
+<footer><div class="soc" id="soc"><a href="https://www.facebook.com/share/r/1DVPNcHwFM/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M13.5 21v-7.5h2.6l.4-3h-3V8.600c0-.9.3-1.500 1.600-1.500h1.500V4.400c-.3 0-1.200-.1-2.200-.1-2.300 0-3.800 1.400-3.800 3.900v2.300H8v3h2.600V21h2.900z"/></svg></a><a href="https://www.tiktok.com/@farmasi.homes" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M16.6 3c.3 2.3 1.7 3.8 4 4v3.1c-1.4 0-2.7-.4-4-1.2v6.2c0 3.2-2.5 5.4-5.4 5.4S5.9 18.3 5.9 15.3c0-3.2 2.7-5.6 5.9-5.2v3.2c-1.5-.5-2.7.6-2.7 2 0 1.2.9 2.1 2.1 2.1 1.300 0 2.200-.9 2.200-2.400V3h3.200z"/></svg></a><a href="https://www.instagram.com/farmasialg/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a></div>فارماسي الجزائر · واتساب: <span dir="ltr" style="unicode-bidi:isolate">0797 818 235</span></footer>
+<script>
+(function(){
+var sel=document.getElementById('prod');
+function $(i){return document.getElementById(i)}
+document.querySelectorAll('.p').forEach(function(c){
+  var t=c.querySelector('h3').textContent, pr=c.querySelector('.price').textContent;
+  var o=document.createElement('option');o.value=t+' ('+pr+')';o.textContent=t+' - '+pr;sel.appendChild(o);
+  c.querySelector('.add').addEventListener('click',function(e){e.preventDefault();sel.value=o.value;$('order').scrollIntoView({behavior:'smooth'});});
+});
+$('send').addEventListener('click',function(e){
+  var nm=$('nm').value.trim(),ph=$('ph').value.trim(),wl=$('wl').value.trim();
+  if(!nm||!ph||!wl){e.preventDefault();$('er').textContent=window.__t?__t('err'):'عمّر الإسم، رقم الهاتف والولاية.';return;}
+  $('er').textContent='';
+  var m='سلام، حبيت نطلب:\nالمنتج: '+sel.value+'\nالكمية: '+($('qty').value||1)+'\nالإسم: '+nm+'\nالهاتف: '+ph+'\nالولاية: '+wl+'\nالعنوان: '+$('ad').value.trim()+'\nملاحظة: '+$('nt').value.trim()+'\nالدفع عند الاستلام';
+  this.href='https://wa.me/213797818235?text='+encodeURIComponent(m);
+});
+})();
+</script>
+<script>
+(function(){
+var U={ph2:['ابحث عن منتجك في فارماسي','Trouvez votre produit chez Farmasi','Find your product at Farmasi'],menu:['القائمة','Menu','Menu'],close:['إغلاق','Fermer','Close'],ph:['ابحث عن منتج...','Rechercher un produit...','Search products...'],wheel:['عجلة الحظ','Roue de la chance','Lucky Wheel'],soon:['قريباً','Bientôt','Soon'],offers:['العروض والتخفيضات','Offres et promotions','Offers & Discounts'],coll:['مجموعات المنتجات','Collections de produits','Product Collections'],best:['الأكثر مبيعاً','Meilleures ventes','Best Sellers'],cats:['التصنيفات','Catégories','Categories'],empty:['ما كاينش منتجات في هذا القسم دوك.','Aucun produit dans cette catégorie pour le moment.','No products in this category yet.'],res:['نتائج البحث عن','Résultats pour','Results for'],none:['ما لقينا حتى منتج.','Aucun produit trouvé.','No products found.'],clr:['مسح','Effacer','Clear'],err:['عمّر الإسم، رقم الهاتف والولاية.','Remplissez le nom, le téléphone et la wilaya.','Fill in name, phone and wilaya.']};
+var C=[['makeup',['Make Up','Make Up','Make Up']],['care',['العناية الشخصية','Soins personnels','Personal Care']],['tuna',['Dr. C. Tuna','Dr. C. Tuna','Dr. C. Tuna']],['kids',['الأطفال','Enfants','Kids']],['perf',['العطور','Parfums','Fragrances']],['men',['الرجال','Hommes','Men']],['nutri',['Nutriplus','Nutriplus','Nutriplus']],['home',['منتجات المنزل','Maison','Home Products']]];
+var D={
+'اعرف أكثر على':['En savoir plus sur','Read more about'],
+'بلسم تنظيف الوجه Dr. C. Tuna':['Baume nettoyant visage Dr. C. Tuna','Dr. C. Tuna Cleansing Balm'],
+'ملمّع شفاه Farmasi':['Gloss à lèvres Farmasi','Farmasi Lip Gloss'],
+'ألوان متعددة':['Plusieurs teintes','Multiple shades'],
+'موزّع فارماسي في الجزائر':['Distributeur Farmasi en Algérie','Farmasi distributor in Algeria'],
+'تحب تبيع منتجات Farmasi ولا تعرف كيفاش تولي موزّع؟ كلمنا على واتساب ونجاوبوك.':['Vous voulez vendre les produits Farmasi ou devenir distributeur ? Écrivez-nous sur WhatsApp, nous vous répondons.','Want to sell Farmasi products or become a distributor? Message us on WhatsApp and we will answer.'],
+'كلمنا على واتساب':['Écrivez-nous sur WhatsApp','Message us on WhatsApp'],
+'كيف نقدر نعاونك؟':['Comment pouvons-nous vous aider ?','How can we help you?'],
+'تدفع نقداً عند وصول طلبك.':['Vous payez en espèces à la réception de votre commande.','Pay in cash when your order arrives.'],
+'تفاصيل الدفع':['Détails du paiement','Payment details'],
+'عمّر طلبك في الصفحة، يوصلنا على واتساب، وتدفع نقداً عند الاستلام.':['Remplissez votre commande sur la page, elle nous parvient sur WhatsApp, et vous payez en espèces à la réception.','Fill in your order on this page, it reaches us on WhatsApp, and you pay in cash on receipt.'],
+'التوصيل إلى المنزل':['Livraison à domicile','Home delivery'],
+'توصيل لجميع ولايات الجزائر الـ 58.':['Livraison dans les 58 wilayas d’Algérie.','Delivery to all 58 wilayas of Algeria.'],
+'تفاصيل التوصيل':['Détails de la livraison','Delivery details'],
+'مدة وسعر التوصيل: إسألنا على واتساب وقولنا ولايتك.':['Délai et prix de livraison : demandez-nous sur WhatsApp en indiquant votre wilaya.','Delivery time and price: ask us on WhatsApp and tell us your wilaya.'],
+'إسأل على واتساب':['Demander sur WhatsApp','Ask on WhatsApp'],
+'خدمة الزبائن':['Service client','Customer service'],
+'كلمنا على واتساب نجاوبوك.':['Écrivez-nous sur WhatsApp.','Message us on WhatsApp.'],
+'اتصل عبر واتساب':['Contacter sur WhatsApp','Contact on WhatsApp'],
+'اكتشف Farmasi':['Découvrez Farmasi','Discover Farmasi'],
+'Farmasi Algérie: عناية بالبشرة والشعر، مكياج وعطور، والدفع عند الاستلام.':['Farmasi Algérie : soins visage et cheveux, maquillage et parfums, paiement à la livraison.','Farmasi Algeria: skin and hair care, makeup and fragrances, cash on delivery.'],
+'اكتشف المزيد':['Découvrir plus','Discover more'],
+'تابعونا على Instagram':['Suivez-nous sur Instagram','Follow us on Instagram'],
+'تابعنا':['Suivre','Follow'],
+'حساب Instagram يتزاد قريباً':['Compte Instagram bientôt disponible','Instagram account coming soon'],
+'واتساب':['WhatsApp','WhatsApp'],
+'منتجات فارماسي':['Les produits Farmasi','Farmasi products'],
+'توصلك لباب دارك في الجزائر':['livrés chez vous en Algérie','delivered to your door in Algeria'],
+'عناية بالبشرة والشعر، مكياج وعطور. الدفع عند الاستلام.':['Soins visage et cheveux, maquillage et parfums. Paiement à la livraison.','Skin and hair care, makeup and fragrances. Cash on delivery.'],
+'شوف المنتجات':['Voir les produits','View products'],
+'عوالم الصيدلية':['Mondes de la pharmacie','Pharmacy worlds'],
+'اكتشف منتجات فارماسي':['Découvrez les produits Farmasi','Discover Farmasi products'],
+'العطور':['Parfums','Fragrances'],
+'المفضل عند الزبائن':['Le favori de nos clients','Customer favorites'],
+'الأكثر طلباً هذا الأسبوع':['Les plus demandés cette semaine','Most requested this week'],
+'كيفاش تطلب؟':['Comment commander ?','How to order?'],
+'اختار المنتج وكليكي على +، وعمّر معلوماتك.':['Choisissez le produit, appuyez sur + et remplissez vos informations.','Pick a product, tap + and fill in your details.'],
+'ابعث الطلب على واتساب.':['Envoyez la commande sur WhatsApp.','Send the order on WhatsApp.'],
+'تستلم وتخلص عند التوصيل.':['Vous recevez et payez à la livraison.','You receive it and pay on delivery.'],
+'الدفع عند الاستلام':['Paiement à la livraison','Cash on delivery'],
+'معلومات الزبون':['Informations client','Customer information'],
+'المنتج':['Produit','Product'],'الكمية':['Quantité','Quantity'],'الإسم واللقب':['Nom et prénom','Full name'],'رقم الهاتف':['Téléphone','Phone number'],'الولاية':['Wilaya','Wilaya'],
+'العنوان (البلدية والحي)':['Adresse (commune et quartier)','Address (municipality and area)'],
+'ملاحظة (اللون، الدرجة...)':['Remarque (couleur, teinte...)','Note (color, shade...)'],
+'أرسل الطلب على واتساب':['Envoyer la commande sur WhatsApp','Send order on WhatsApp'],
+'فارماسي الجزائر · واتساب:':['Farmasi Algérie · WhatsApp :','Farmasi Algeria · WhatsApp:'],
+'شامبوان Dr. C. Tuna بالثوم والكابيكسيل':['Shampoing Dr. C. Tuna Ail & Capixyl','Dr. C. Tuna Garlic & Capixyl Shampoo'],
+'جلوس مات Farmasi':['Gloss mat Farmasi','Farmasi Matte Gloss'],
+'شامبوان Keratin Therapy للشعر الجاف والمتضرر':['Shampoing Keratin Therapy cheveux secs et abîmés','Keratin Therapy Shampoo for dry & damaged hair'],
+'ماسك Keratin Therapy مرمم للشعر الجاف والمتضرر':['Masque réparateur Keratin Therapy cheveux secs et abîmés','Keratin Therapy Repairing Mask for dry & damaged hair'],
+'سيروم Keratin Therapy مرمم للشعر':['Sérum réparateur Keratin Therapy','Keratin Therapy Repairing Serum'],
+'كريم CC بيرفكتينغ 9 في 1 (Light 01)':['Crème CC Perfecting 9 en 1 (Light 01)','CC Perfecting Cream 9-in-1 (Light 01)'],
+'VFX Pro Time Locker سبراي تثبيت المكياج':['VFX Pro Time Locker spray fixateur','VFX Pro Time Locker Fixing Spray'],
+'كريم BB 7 في 1 (Light)':['Crème BB 7 en 1 (Light)','BB Cream 7-in-1 (Light)'],
+'كريم الوجه Dr. C. Tuna بشجرة الشاي':['Crème visage Dr. C. Tuna Tea Tree','Dr. C. Tuna Tea Tree Face Cream'],
+'كونسيلر حجاب الكمال Farmasi':['Anticernes Farmasi - Hijab El Kamal','Farmasi Concealer - Hijab El Kamal'],
+'ستيك بلوشر وبرونزور Farmasi':['Stick blush et bronzer Farmasi','Farmasi Blush & Bronzer Stick'],
+'قلم تحديد الشفاه Farmasi':['Crayon contour des lèvres Farmasi','Farmasi Lip Liner'],
+'جلوس لامع Farmasi':['Gloss brillant Farmasi','Farmasi Shiny Lip Gloss'],
+'شمع تثبيت الحواجب Farmasi':['Cire coiffante pour sourcils Farmasi','Farmasi Brow Setting Wax'],
+'الدرجات: 01 · 03 · 04 · 07 · 10':['Teintes : 01 · 03 · 04 · 07 · 10','Shades: 01 · 03 · 04 · 07 · 10'],
+'الدرجات: 01 · 03 · 04':['Teintes : 01 · 03 · 04','Shades: 01 · 03 · 04'],
+'للبشرة الدهنية · ترطيب خفيف':['Peau grasse · hydratation légère','Oily skin · light hydration'],
+'بلوشر · برونزر':['Blush · Bronzer','Blush · Bronzer'],
+'عدة ألوان':['Plusieurs teintes','Several shades']};
+var li=0,LN=['ar','fr','en'],cq='';
+function $(i){return document.getElementById(i)}
+function g(k){return U[k][li]}
+window.__t=g;
+window.__open=function(id){$('q').value='';$('q2').value='';find('');go(id);var c=$(id);if(c){c.classList.add('hl-on');setTimeout(function(){c.classList.remove('hl-on')},1800)}};
+function unit(s){return s.replace(/(\d+)\s*مل/g,'$1 ml').replace(/(\d+)\s*غ/g,'$1 g').replace(/(\d+)\s*دج/g,'$1 DA')}
+function tr(k){if(!li)return k;var d=D[k];return d?d[li-1]:unit(k)}
+var cards=[].slice.call(document.querySelectorAll('.p')),sel=$('prod');
+cards.forEach(function(c){c.dataset.ar=c.querySelector('h3').textContent;c.dataset.sm=(c.querySelector('small')||{}).textContent||'';c.dataset.pr=c.querySelector('.price').textContent});
+var nodes=[],w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT,null);
+while(w.nextNode()){var n=w.currentNode,p=n.parentNode,k=n.nodeValue.trim();
+  if(!k||/^(SCRIPT|STYLE|OPTION)$/.test(p.nodeName)||p.closest('#dr'))continue;
+  if(D[k]||/\d\s*(مل|غ|دج)/.test(k))nodes.push({n:n,k:k,r:n.nodeValue});}
+function opts(){[].forEach.call(sel.options,function(o,i){var c=cards[i];if(c)o.textContent=tr(c.dataset.ar)+' - '+tr(c.dataset.pr)})}
+function cats(){var h='';C.forEach(function(c){var m=cards.filter(function(x){return (' '+x.dataset.cat+' ').indexOf(' '+c[0]+' ')>-1});
+  h+='<details><summary>'+c[1][li]+'</summary>'+(m.length?m.map(function(x){return '<a href="#'+x.id+'" data-c="'+x.id+'">'+tr(x.dataset.ar)+'</a>'}).join(''):'<p>'+g('empty')+'</p>')+'</details>'});
+  $('catl').innerHTML=h}
+function upd(){var n=cards.filter(function(c){return !c.hidden}).length;$('sb').hidden=!cq;if(cq)$('st').textContent=n?g('res')+' '+cq+' ('+n+')':g('none')}
+function find(q){cq=q.trim();var s=cq.toLowerCase();cards.forEach(function(c){var t=(c.dataset.ar+' '+c.dataset.sm+' '+tr(c.dataset.ar)+' '+tr(c.dataset.sm)).toLowerCase();c.hidden=!!s&&t.indexOf(s)<0});upd()}
+function setL(i){li=i;var d=document.documentElement;d.lang=LN[i];d.dir=i?'ltr':'rtl';
+  nodes.forEach(function(o){var v=li?tr(o.k):o.k;o.n.nodeValue=o.r.replace(o.k,function(){return v})});
+  [].forEach.call(document.querySelectorAll('[data-u]'),function(e){e.textContent=g(e.dataset.u)});
+  $('q').placeholder=g('ph');$('cl').setAttribute('aria-label',g('close'));$('mb').setAttribute('aria-label',g('menu'));
+  [].forEach.call(document.querySelectorAll('[data-l]'),function(b){b.classList.toggle('on',b.dataset.l===LN[i])});
+  $('sc').textContent=g('clr');$('q2').placeholder=g('ph2');$('qb2').setAttribute('aria-label',g('ph2'));opts();cats();upd();
+  if(window.__lang)__lang(i);
+  try{localStorage.setItem('lang',LN[i])}catch(x){}}
+function go(id){var e=$(id);if(e)e.scrollIntoView({behavior:'smooth',block:'start'})}
+function op(){$('ov').classList.add('on');$('dr').classList.add('on');$('dr').setAttribute('aria-hidden','false');document.body.classList.add('lock');setTimeout(function(){$('cl').focus()},60)}
+function cls(){$('ov').classList.remove('on');$('dr').classList.remove('on');$('dr').setAttribute('aria-hidden','true');document.body.classList.remove('lock')}
+function sub(){find($('q').value);cls();setTimeout(function(){go('products')},320)}
+$('mb').onclick=op;$('cl').onclick=cls;$('ov').onclick=cls;
+document.addEventListener('keydown',function(e){if(e.key==='Escape')cls()});
+$('qb').onclick=sub;
+function sub2(){find($('q2').value);setTimeout(function(){go('products')},50)}
+$('qb2').onclick=sub2;$('q2').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();sub2()}});
+$('q').addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();sub()}});
+$('sc').onclick=function(){$('q').value='';$('q2').value='';find('')};
+$('mo').href='https://wa.me/213797818235?text='+encodeURIComponent('سلام، حبيت نعرف العروض والتخفيضات الحالية');
+$('dr').addEventListener('click',function(e){var a=e.target.closest('a,button');if(!a)return;
+  if(a.dataset.l){setL(LN.indexOf(a.dataset.l));return}
+  if(a.dataset.c){e.preventDefault();var id=a.dataset.c;$('q').value='';find('');cls();setTimeout(function(){go(id);var c=$(id);c.classList.add('hl-on');setTimeout(function(){c.classList.remove('hl-on')},1800)},320);return}
+  if(a.dataset.go){e.preventDefault();var t=a.dataset.go;cls();setTimeout(function(){go(t)},320)}});
+var s0='ar';try{s0=localStorage.getItem('lang')||'ar'}catch(x){}
+setL(Math.max(0,LN.indexOf(s0)));
+window.__miss=Object.keys(D).filter(function(k){return !nodes.some(function(o){return o.k===k})||0}).length;
+})();
+</script>
+<script>
+(function(){
+/* ===== إدارة الإعلانات: زيد / بدّل / حيّد عنصر هنا =====
+   i   : الصورة لكل لغة (ar إجبارية، fr و en اختيارية)
+   alt : الوصف بالثلاث لغات
+   go  : رقم بطاقة المنتج اللي يفتحها الإعلان (p1، p2...) */
+var SLIDES=[
+  {i:{ar:'images/slides/slide-1.jpg'},alt:{ar:'ماسك كيراتين ثيرابي من فارماسي الجزائر',fr:'Masque Keratin Therapy - Farmasi Algérie',en:'Keratin Therapy mask - Farmasi Algeria'},go:'p4'},
+  {i:{ar:'images/slides/slide-2.jpg'},alt:{ar:'كريم CC بيرفكتينغ من فارماسي الجزائر',fr:'Crème CC Perfecting - Farmasi Algérie',en:'CC Perfecting Cream - Farmasi Algeria'},go:'p6'},
+  {i:{ar:'images/slides/slide-3.jpg'},alt:{ar:'كونسيلر حجاب الكمال من فارماسي الجزائر',fr:'Anticernes Hijab El Kamal - Farmasi Algérie',en:'Hijab El Kamal concealer - Farmasi Algeria'},go:'p10'},
+];
+/* ======================================================= */
+var LN={ar:1,fr:1,en:1},L=LN[document.documentElement.lang]?document.documentElement.lang:'ar';
+var trk=document.getElementById('trk'),thb=document.getElementById('thb'),cur=0,timer=null;
+var still=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+function src(s){return s.i[L]||s.i.ar}
+function alt(s){return s.alt[L]||s.alt.ar}
+function mark(){[].forEach.call(thb.children,function(b,n){b.classList.toggle('on',n===cur)});var t=thb.children[cur];if(t)thb.scrollTo({left:t.offsetLeft-(thb.clientWidth-t.offsetWidth)/2,behavior:'smooth'})}
+function goTo(n,user){cur=n;trk.scrollTo({left:n*trk.clientWidth,behavior:'smooth'});mark();if(user)start()}
+function render(){trk.innerHTML='';thb.innerHTML='';
+  SLIDES.forEach(function(s,n){var a=document.createElement('a');a.className='sd';a.href='#'+s.go;a.setAttribute('aria-label',alt(s));var im=new Image();im.src=src(s);im.alt=alt(s);im.draggable=false;a.appendChild(im);trk.appendChild(a);
+    var b=document.createElement('button');b.type='button';b.className='th';b.setAttribute('aria-label',alt(s));var t=new Image();t.src=src(s);t.alt='';b.appendChild(t);b.onclick=function(){goTo(n,true)};thb.appendChild(b)});
+  trk.scrollLeft=cur*trk.clientWidth;mark()}
+function tick(){if(!document.hidden)goTo((cur+1)%SLIDES.length)}
+function stop(){clearInterval(timer);timer=null}
+function start(){stop();if(!still&&SLIDES.length>1)timer=setInterval(tick,4000)}
+trk.addEventListener('scroll',function(){var n=Math.round(trk.scrollLeft/trk.clientWidth);if(n!==cur&&n>=0&&n<SLIDES.length){cur=n;mark()}},{passive:true});
+trk.addEventListener('click',function(e){var a=e.target.closest('.sd');if(!a)return;e.preventDefault();var s=SLIDES[[].indexOf.call(trk.children,a)];if(s&&s.go&&window.__open)__open(s.go)});
+['touchstart','pointerdown','mouseenter'].forEach(function(ev){trk.addEventListener(ev,stop,{passive:true})});
+['touchend','touchcancel','pointerup','mouseleave'].forEach(function(ev){trk.addEventListener(ev,start,{passive:true})});
+window.addEventListener('resize',function(){trk.scrollLeft=cur*trk.clientWidth});
+window.__lang=function(i){L=['ar','fr','en'][i];render()};
+render();start();
+})();
+</script>
+<script>
+(function(){
+/* ===== حساب Instagram: اكتب اسم الحساب بدون @ (مثال: 'farmasi.algerie') ===== */
+var INSTAGRAM={user:'farmasialg'};
+/* ===== المعرض: زيد عناصر هنا (تظهر في البداية، قبل صور المنتجات والإعلانات) =====
+   صورة : {src:'data:image/jpeg;base64,...', alt:'...', url:'https://www.instagram.com/p/XXXX/'}  (url = رابط المنشور الأصلي؛ بلاه تفتح المنتج بـ go:'p4')
+   فيديو: {video:'data:video/mp4;base64,...', poster:'data:image/jpeg;base64,...', alt:'...'} */
+var MEDIA=[];
+var WA='https://wa.me/213797818235?text=';
+function $(i){return document.getElementById(i)}
+var AR={prev:['السابق','Précédent','Previous'],next:['التالي','Suivant','Next'],play:['تشغيل الفيديو','Lire la vidéo','Play video'],more:['شوف المزيد على Instagram','Voir plus sur Instagram','See more on Instagram']},LI=0;
+function aria(i){LI=i;var mt=$('mt');if(mt)mt.textContent=AR.more[i];$('gp').setAttribute('aria-label',AR.prev[i]);$('gn').setAttribute('aria-label',AR.next[i]);[].forEach.call(document.querySelectorAll('.vd'),function(b){b.setAttribute('aria-label',AR.play[i])})}
+$('dlw').href=WA+encodeURIComponent('سلام، حبيت نعرف مدة وسعر التوصيل لولاية: ');
+$('csw').href=WA+encodeURIComponent('سلام، عندي سؤال');
+[].forEach.call(document.querySelectorAll('.hb[aria-expanded]'),function(b){b.onclick=function(){var c=b.closest('.hc'),o=c.classList.toggle('open');b.setAttribute('aria-expanded',o?'true':'false')}});
+document.querySelector('[data-go2]').addEventListener('click',function(e){e.preventDefault();var t=$(this.dataset.go2);if(t)t.scrollIntoView({behavior:'smooth',block:'start'})});
+var u=(INSTAGRAM.user||'').replace(/^@/,'').trim();
+if(u){$('igf').hidden=false;$('igs').hidden=true;$('igf').href='https://www.instagram.com/'+encodeURIComponent(u)+'/';$('ign').textContent='@'+u;$('ign').hidden=false}
+var items=MEDIA.slice();
+[].forEach.call(document.querySelectorAll('#trk .sd'),function(a){var im=a.querySelector('img');if(im)items.push({src:im.src,alt:im.alt,go:a.getAttribute('href').slice(1)})});
+[].forEach.call(document.querySelectorAll('.p'),function(c){var im=c.querySelector('.img img');if(im)items.push({src:im.src,alt:im.alt,go:c.id})});
+var gt=$('gt');
+items.forEach(function(it){var d=document.createElement('div');d.className='gi';
+  if(it.video){var b=document.createElement('button');b.type='button';b.className='vd';var p=new Image();p.src=it.poster||'';p.alt=it.alt||'';b.appendChild(p);var s=document.createElement('span');s.className='pl';s.innerHTML='<svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>';b.appendChild(s);
+    b.onclick=function(){var v=document.createElement('video');v.src=it.video;v.controls=true;v.autoplay=true;v.setAttribute('playsinline','');d.replaceChild(v,b);var r=v.play&&v.play();if(r&&r.catch)r.catch(function(){})};d.appendChild(b)}
+  else{var im=new Image();im.src=it.src;im.alt=it.alt||'';im.draggable=false;d.appendChild(im);if(it.url){d.classList.add('lk2');d.onclick=function(){window.open(it.url,'_blank','noopener')}}else if(it.go){d.classList.add('lk2');d.onclick=function(){if(window.__open)__open(it.go)}}}
+  gt.appendChild(d)});
+if(u){var m=document.createElement('a');m.className='gi more';m.href='https://www.instagram.com/'+encodeURIComponent(u)+'/';m.target='_blank';m.rel='noopener';m.innerHTML='<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5v.01"/></svg><span id="mt"></span><small dir="ltr">@'+u+'</small>';gt.appendChild(m)}
+$('gp').onclick=function(){gt.scrollBy({left:-gt.clientWidth*.8,behavior:'smooth'})};
+$('gn').onclick=function(){gt.scrollBy({left:gt.clientWidth*.8,behavior:'smooth'})};
+var old=window.__lang;window.__lang=function(i){if(old)old(i);aria(i)};
+aria({ar:0,fr:1,en:2}[document.documentElement.lang]||0);
+})();
+</script>
+<script>
+(function(){
+var T={ask:['اسأل عن المنتج','Poser une question','Ask about this product'],ord:['اطلب هذا المنتج','Commander ce produit','Order this product'],src:['ملخّص من الوصف الرسمي لـ Farmasi.','Résumé de la description officielle Farmasi.','Summary of Farmasi’s official description.'],no:['للمكونات وطريقة الاستعمال، اسألنا على واتساب.','Pour la composition et le mode d’emploi, écrivez-nous sur WhatsApp.','For ingredients and usage, message us on WhatsApp.'],use:['طريقة الاستعمال','Mode d’emploi','How to use'],cl:['إغلاق','Fermer','Close']};
+/* ===== تفاصيل المنتجات: معرّف البطاقة -> {pts:[[ar],[fr],[en]], use:[ar,fr,en]} — زيد/عدّل هنا ===== */
+var INFO={
+p1:{pts:[['يحتوي على Trichogen وCapixyl ومستخلص الثوم.','ينظّف الشعر بلطف.','يساعد على تقوية الشعر وتقليل التقصف ويعيد اللمعان والحيوية.'],['Formulé avec Trichogen, Capixyl et extrait d’ail.','Nettoie les cheveux en douceur.','Aide à fortifier les cheveux, réduire la casse et redonner éclat et vitalité.'],['Made with Trichogen, Capixyl and garlic extract.','Gently cleanses hair.','Helps strengthen hair, reduce breakage and restore shine and vitality.']]},
+p2:{pts:[['لون قوي يدوم طويلاً.','تأثير مات يدوم طوال النهار.','فرشاة بشكل لوزة تسهّل وضعه.'],['Couleur intense et longue tenue.','Effet mat qui dure toute la journée.','Pinceau en forme d’amande pour une application facile.'],['High-impact, long-lasting colour.','Matte effect that lasts all day.','Almond-shaped brush for easy application.']]},
+p5:{pts:[['يحمي الشعر من حرارة السيشوار والأدوات الحرارية.','يقلل الهيشان ويعطي لمعاناً.','قوام خفيف ما يخلّيش الشعر دهني.'],['Protège les cheveux de la chaleur des outils coiffants.','Réduit les frisottis et apporte de la brillance.','Texture légère, non grasse.'],['Protects hair from heat styling tools.','Reduces frizz and adds shine.','Light, non-greasy texture.']]},
+p6:{pts:[['تركيبة خفيفة تغطي العيوب.','توحّد لون البشرة وتخفي الاحمرار.','SPF 25.'],['Formule légère qui couvre les imperfections.','Unifie le teint et masque les rougeurs.','SPF 25.'],['Lightweight formula that covers imperfections.','Evens out skin tone and conceals redness.','SPF 25.']]},
+p7:{pts:[['سبراي خفيف يطوّل ثبات المكياج.','نتيجة منعشة ومتجانسة.','بلا تيبّس وبلا بقايا.'],['Spray léger qui prolonge la tenue du maquillage.','Fini frais et uniforme.','Sans effet figé ni résidu.'],['Lightweight spray that prolongs makeup wear.','Fresh, even finish.','No stiffness or residue.']]},
+p8:{pts:[['كريم BB بـ 7 فوائد في منتج واحد.','SPF 15.'],['Crème BB 7 en 1.','SPF 15.'],['7-in-1 BB cream.','SPF 15.']]},
+p9:{pts:[['مرطّب خفيف للوجه.','يرطّب البشرة ويساعد على توازنها وصحتها.'],['Hydratant léger pour le visage.','Hydrate la peau et favorise un teint équilibré et sain.'],['Lightweight facial moisturizer.','Hydrates skin and promotes a balanced, healthy complexion.']]},
+p16:{pts:[['يحتوي على زبدة الشيا وفيتامين E ومزيج زيوت غنية.','يزيل المكياج ويغذّي البشرة.','يجي مع ملعقة صغيرة للتطبيق.'],['Au beurre de karité, vitamine E et mélange d’huiles riches.','Retire le maquillage et nourrit la peau.','Livré avec une petite spatule.'],['Shea butter, vitamin E and a blend of rich oils.','Removes makeup and nourishes the skin.','Comes with a small spatula.']],use:['حطّو على بشرة ناشفة بأطراف الأصابع، دلّك بلطف، ثم اشطف بالماء الدافئ وكمّل روتينك المعتاد.','Appliquer sur peau sèche du bout des doigts, masser doucement, puis rincer à l’eau tiède et poursuivre votre routine habituelle.','Apply to dry skin with fingertips, massage gently, then rinse well with warm water and continue your usual routine.']}
+};
+var $=function(i){return document.getElementById(i)},cards=[].slice.call(document.querySelectorAll('.p')),cur=null;
+var ov=document.createElement('div');ov.className='pdo';ov.id='pdo';
+var sh=document.createElement('div');sh.className='pd';sh.id='pd';sh.setAttribute('role','dialog');sh.setAttribute('aria-modal','true');sh.setAttribute('aria-hidden','true');
+document.body.appendChild(ov);document.body.appendChild(sh);
+function li(){var l=document.documentElement.lang;return l==='fr'?1:l==='en'?2:0}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function build(){if(!cur)return;var i=li(),c=cur,id=c.id,inf=INFO[id],t=c.querySelector('h3').textContent,sm=(c.querySelector('small')||{}).textContent||'',pr=c.querySelector('.price').textContent,im=c.querySelector('img');
+var h='<div class="gr"></div><button class="px" type="button" aria-label="'+T.cl[i]+'">&times;</button><div class="pi">'+(im?'<img src="'+im.src+'" alt="'+esc(t)+'">':'')+'</div><h3>'+esc(t)+'</h3>'+(sm?'<p class="ps">'+esc(sm)+'</p>':'')+'<p class="pp">'+esc(pr)+'</p>';
+if(inf){h+='<ul>'+inf.pts[i].map(function(x){return'<li>'+esc(x)+'</li>'}).join('')+'</ul>';if(inf.use)h+='<h4>'+T.use[i]+'</h4><p style="margin:0 0 10px;line-height:1.8">'+esc(inf.use[i])+'</p>';h+='<p class="pn">'+T.src[i]+' '+T.no[i]+'</p>'}else{h+='<p class="pn">'+T.no[i]+'</p>'}
+var wa='https://wa.me/213797818235?text='+encodeURIComponent((i===0?'سلام، حبيت نسأل على ':i===1?'Bonjour, une question sur ':'Hello, I have a question about ')+t);
+h+='<div class="pb"><button class="po" type="button" id="pdo1">'+T.ord[i]+'</button><a class="pq" target="_blank" rel="noopener" href="'+wa+'">'+T.ask[i]+'</a></div>';
+sh.innerHTML=h;sh.dir=i?'ltr':'rtl'}
+function open(c){cur=c;build();ov.classList.add('on');sh.classList.add('on');sh.setAttribute('aria-hidden','false');document.body.classList.add('lock');sh.scrollTop=0}
+function close(){ov.classList.remove('on');sh.classList.remove('on');sh.setAttribute('aria-hidden','true');document.body.classList.remove('lock');cur=null}
+document.addEventListener('click',function(e){var x=e.target.closest&&e.target.closest('.p .img,.p h3');if(x&&!e.target.closest('a')){open(x.closest('.p'));return}
+if(e.target===ov||(e.target.closest&&e.target.closest('.pd .px')))close();
+var o=e.target.closest&&e.target.closest('#pdo1');if(o){var c=cur,idx=cards.indexOf(c);close();var sel=$('prod');if(sel&&idx>-1&&sel.options[idx])sel.selectedIndex=idx;var od=$('order');if(od)od.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){var q=$('qty');if(q)q.focus({preventScroll:true})},500)}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&cur)close()});
+cards.forEach(function(c){var im=c.querySelector('.img'),h=c.querySelector('h3');[im,h].forEach(function(n){n.setAttribute('role','button');n.tabIndex=0;n.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(c)}})})});
+var old=window.__lang;window.__lang=function(i){if(old)old(i);if(cur)setTimeout(build,0)};
+})();
+</script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)},cards=[].slice.call(document.querySelectorAll('.p')),act=null;
+var M={makeup:['Make Up','Make Up','Make Up'],tuna:['Dr. C. Tuna','Dr. C. Tuna','Dr. C. Tuna'],perf:['العطور','Parfums','Fragrances'],nutri:['Nutriplus','Nutriplus','Nutriplus']};
+var E=['ما كاينش منتجات في هذا القسم حالياً. اسألنا على واتساب.','Aucun produit dans cette catégorie pour le moment. Écrivez-nous sur WhatsApp.','No products in this category yet. Message us on WhatsApp.'];
+var R=['المنتجات:','Produits :','Products:'];
+/* ===== صور الأقسام: معرّف بطاقة منتج يُستعمل كصورة القسم، أو ضع data:image هنا لكل قسم (perf / nutri فارغة) ===== */
+var CATIMG={makeup:'p15',tuna:'p16',perf:'',nutri:''};
+function li(){var l=document.documentElement.lang;return l==='fr'?1:l==='en'?2:0}
+Object.keys(CATIMG).forEach(function(k){var v=CATIMG[k];if(!v)return;var src=v.indexOf('data:')===0?v:((document.querySelector('#'+v+' img')||{}).src);if(!src)return;var im=new Image();im.src=src;im.alt='';im.loading='lazy';im.decoding='async';var b=document.querySelector('.cat[data-k="'+k+'"] .cim');if(b){b.innerHTML='';b.appendChild(im)}});
+function show(){var i=li(),sb=$('sb'),st=$('st');if(!act){return}var n=cards.filter(function(c){return !c.hidden}).length;sb.hidden=false;st.textContent=n?R[i]+' '+M[act][i]+' ('+n+')':M[act][i]+' — '+E[i]}
+function pick(k){act=k;$('q').value='';$('q2').value='';cards.forEach(function(c){c.hidden=(' '+c.dataset.cat+' ').indexOf(' '+k+' ')<0});show();var p=$('products');if(p)p.scrollIntoView({behavior:'smooth',block:'start'})}
+document.addEventListener('click',function(e){var c=e.target.closest&&e.target.closest('.cat[data-k]');if(c){pick(c.dataset.k);return}if(e.target.closest&&e.target.closest('#sc'))act=null});
+['q','q2'].forEach(function(id){var q=$(id);if(q)q.addEventListener('input',function(){act=null})});
+var old=window.__lang;window.__lang=function(i){if(old)old(i);show()};
+})();
+</script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)};
+/* ===== الفيديو التعريفي: حط رابط mp4 (أو data:video) في src، أو معرّف يوتيوب في youtube. poster صورة اختيارية ===== */
+var VIDEO={src:'intro.mp4',youtube:'',poster:'images/brand/poster.jpg'};
+/* ===== المقالات: زيد / عدّل / حيّد عنصر. img: معرّف بطاقة منتج (p16...) أو 'logo' أو data:image . body = فقرات؛ {h:'عنوان'} عنوان فرعي؛ {ul:[...]} قائمة. fr يرجع للإنجليزية إذا ما كانش ===== */
+var ARTICLES=[
+{img:'logo',tag:['المؤسس','Our Founder'],
+ t:['الدكتور Cevdet Tuna، مؤسس Farmasi','Dr. Cevdet Tuna, the Founder of Farmasi'],
+ d:['قصة الطبيب اللي بدات منه حكاية Farmasi.','The story of the doctor behind Farmasi.'],
+ b:[['وُلد الدكتور Cevdet Tuna سنة 1923 في إدرنة بتركيا. درس الطب في كلية Goethe للطب في ألمانيا، ثم رجع لبلاده بهدف خدمتها.',{h:'من الصيدلة إلى مستحضرات التجميل'},'كان من رواد الصناعة الدوائية الحديثة في تركيا، وأسّس سنة 1952 واحداً من أوائل مصانع الأدوية في البلاد. بعدها توسّع نحو مستحضرات التجميل والعناية الشخصية، وأسّس سنة 1998 شركة Tanalize Cosmetics.','توفي سنة 2017، وتبقى مبادئه في العلم والنزاهة أساس اسم Dr. C. Tuna اللي نلقاوه اليوم في منتجات العناية بالبشرة والشعر.'],
+ ['Dr. Cevdet Tuna was born in 1923 in Edirne, Turkey. He studied medicine at the Goethe Medical School in Germany, then returned home determined to serve his country.',{h:'From pharmaceuticals to cosmetics'},'He became one of the pioneers of modern pharmaceuticals in Turkey and, in 1952, established one of the nation’s first pharmaceutical factories. He later expanded into cosmetics and personal care, founding Tanalize Cosmetics in 1998.','He passed away in 2017. His principles of science and integrity live on in the Dr. C. Tuna name found today on skin and hair care products.']]},
+{img:'p16',tag:['العناية بالبشرة','Skin Care'],
+ t:['روتين بسيط للعناية بالبشرة','A Simple Skin Care Routine'],
+ d:['ثلاث خطوات يومية تكفي باش تحافظ على بشرتك.','Three daily steps to keep your skin looking its best.'],
+ b:[['ما يلزمش روتين طويل باش تعتني ببشرتك، المهم الانتظام.',{ul:['نظّفي وجهك صباحاً ومساءً بلطف، وخاصة في الليل إذا كنتِ حاطة مكياج.','رطّبي بشرتك بعد التنظيف.','حطي واقي الشمس نهاراً. كريم CC عندنا فيه SPF 25.','ما تنامش بالمكياج.']},{h:'تنظيف المكياج'},'بلسم Dr. C. Tuna للتنظيف فيه زبدة الشيا وفيتامين E ومزيج زيوت. يتحط على بشرة ناشفة بأطراف الأصابع، يتدلّك بلطف، ثم يتشطف بالماء الدافئ.'],
+ ['You do not need a long routine to care for your skin. Consistency matters most.',{ul:['Cleanse gently morning and evening, especially at night if you wear makeup.','Moisturize after cleansing.','Apply sunscreen during the day. Our CC cream contains SPF 25.','Do not sleep with makeup on.']},{h:'Removing makeup'},'Dr. C. Tuna Cleansing Balm contains shea butter, vitamin E and a blend of rich oils. Apply to dry skin with fingertips, massage gently, then rinse with warm water.']]},
+{img:'p5',tag:['العناية بالشعر','Hair Care'],
+ t:['نصائح للعناية بالشعر يومياً','Everyday Hair Care Tips'],
+ d:['عادات صغيرة تفرق في لمعان الشعر وقوته.','Small habits that make a big difference to shine and strength.'],
+ b:[['الشعر الجاف والمتضرر يحتاج عناية لطيفة ومنتظمة.',{ul:['اغسلي فروة الرأس بالشامبوان ودلّكيها بلطف، وما تفركيش الأطراف.','حطي الماسك على طول الشعر بعد الشامبوان.','استعملي واقي الحرارة قبل السيشوار أو المكواة. سيروم Keratin Therapy مصمم لحماية الشعر من حرارة أدوات التصفيف.','قصّي الأطراف بانتظام.']},'ولا تنسي أن النتيجة تظهر مع الاستمرار.'],
+ ['Dry and damaged hair needs gentle, regular care.',{ul:['Shampoo the scalp and massage gently; do not scrub the ends.','Apply a mask along the lengths after shampooing.','Use a heat protectant before blow-drying or straightening. Keratin Therapy serum is made to protect hair from heat styling tools.','Trim the ends regularly.']},'Results show with consistency.']]},
+{img:'p15',tag:['الجمال','Beauty'],
+ t:['نصائح مكياج لإطلالة تدوم','Makeup Tips for a Look That Lasts'],
+ d:['كيفاش تطوّلي ثبات المكياج وتبرزي ملامحك.','How to make your makeup last and highlight your features.'],
+ b:[['إطلالة جميلة تبدأ بتحضير البشرة وتنتهي بتثبيت المكياج.',{ul:['حضّري بشرتك بالترطيب قبل المكياج.','ثبّتي المكياج بسبراي التثبيت، فهو يطوّل ثباته من غير ما يخلّي ملمساً متيبّساً.','رتّبي حواجبك بشمع تثبيت الحواجب.','حددي شفايفك بقلم قبل الجلوس.']},'نلقاو في المتجر درجات متعددة من الجلوس والأحمر والملمّعات، اختاري اللي يناسب بشرتك.'],
+ ['A great look starts with skin prep and ends with a good setting step.',{ul:['Moisturize before applying makeup.','Lock it in with setting spray, which prolongs wear without stiffness.','Tame brows with brow setting wax.','Define lips with a liner before gloss.']},'Our store has several shades of glosses and lip products, choose what suits you.']]},
+{img:'p6',tag:['منتجات Farmasi','Farmasi Products'],
+ t:['تعرفي على منتجات Farmasi في متجرنا','Discover Farmasi Products in Our Store'],
+ d:['مكياج، عناية بالشعر والبشرة، وطلب سهل على واتساب.','Makeup, hair and skin care, and easy ordering on WhatsApp.'],
+ b:[['في Farmasi Algérie نلقاو منتجات من عالم Farmasi:',{ul:['Make Up: كريم CC وBB، سبراي التثبيت، كونسيلر، ملمّعات وأحمر الشفاه.','Dr. C. Tuna: الشامبوان بالثوم، كريم الوجه بشجرة الشاي، بلسم التنظيف.','Keratin Therapy: شامبوان وماسك وسيروم للشعر.']},'تختار المنتج، تعمّر معلوماتك في الصفحة، ويوصلنا الطلب على واتساب. الدفع عند الاستلام.'],
+ ['At Farmasi Algérie you will find products from the Farmasi world:',{ul:['Make Up: CC and BB creams, setting spray, concealer, glosses and lipsticks.','Dr. C. Tuna: garlic shampoo, tea tree face cream, cleansing balm.','Keratin Therapy: shampoo, mask and serum for hair.']},'Choose a product, fill in your details on the page and the order reaches us on WhatsApp. Pay on delivery.']]}
+];
+var T={rm:['قراءة المزيد','Lire la suite','Read more'],cl:['إغلاق','Fermer','Close'],nv:['الفيديو التعريفي سيُضاف قريباً.','La vidéo de présentation sera ajoutée bientôt.','The intro video will be added soon.'],pl:['تشغيل الفيديو','Lire la vidéo','Play video']};
+function li(){var l=document.documentElement.lang;return l==='fr'?1:l==='en'?2:0}
+function ix(i){return i===0?0:1}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function src(k){if(k==='logo'){var l=document.querySelector('header .lg');return l?l.src:''}if(String(k).indexOf('data:')===0)return k;var m=document.querySelector('#'+k+' img');return m?m.src:''}
+function imgH(k){var u=src(k);if(!u)return'';return'<img'+(k==='logo'?' class="lo"':'')+' src="'+u+'" alt="" loading="lazy" decoding="async">'}
+function render(){var i=li(),h='';ARTICLES.forEach(function(a,n){h+='<article class="ac"><div class="ai" data-n="'+n+'">'+imgH(a.img)+'</div><div class="ab"><span class="at">'+esc(a.tag[ix(i)])+'</span><h3>'+esc(a.t[ix(i)])+'</h3><p>'+esc(a.d[ix(i)])+'</p><button class="rm" type="button" data-n="'+n+'">'+T.rm[i]+'</button></div></article>'});$('ag').innerHTML=h;var vp=$('vp');if(vp)vp.setAttribute('aria-label',T.pl[i])}
+function body(a,i){return a.b[ix(i)].map(function(x){if(typeof x==='string')return'<p>'+esc(x)+'</p>';if(x.h)return'<h4>'+esc(x.h)+'</h4>';if(x.ul)return'<ul>'+x.ul.map(function(y){return'<li>'+esc(y)+'</li>'}).join('')+'</ul>';return''}).join('')}
+var cur=null;
+function openA(n){cur=n;var i=li(),a=ARTICLES[n],r=$('rd');r.dir=i?'ltr':'rtl';r.innerHTML='<div class="gr"></div><button class="rx" type="button" aria-label="'+T.cl[i]+'">&times;</button><div class="ri">'+imgH(a.img)+'</div><span class="at" style="color:var(--pink);font-weight:700;font-size:12px">'+esc(a.tag[ix(i)])+'</span><h3>'+esc(a.t[ix(i)])+'</h3><div class="rb">'+body(a,i)+'</div>';$('rdo').classList.add('on');r.classList.add('on');r.setAttribute('aria-hidden','false');document.body.classList.add('lock');r.scrollTop=0}
+function closeA(){cur=null;$('rdo').classList.remove('on');$('rd').classList.remove('on');$('rd').setAttribute('aria-hidden','true');document.body.classList.remove('lock')}
+document.addEventListener('click',function(e){var t=e.target;if(!t.closest)return;var b=t.closest('#ag .rm,#ag .ai');if(b){openA(+b.dataset.n);return}if(t.id==='rdo'||t.closest('#rd .rx'))closeA();
+if(t.closest('#vp')){var box=$('vb'),i=li();if(VIDEO.src){box.innerHTML='<video controls autoplay playsinline preload="auto" src="'+esc(VIDEO.src)+'"'+(VIDEO.poster?' poster="'+esc(VIDEO.poster)+'"':'')+'></video>'}else if(VIDEO.youtube){box.innerHTML='<iframe src="https://www.youtube-nocookie.com/embed/'+encodeURIComponent(VIDEO.youtube)+'?autoplay=1&rel=0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen title="Farmasi"></iframe>'}else{var n=$('vn');n.textContent=T.nv[i];n.hidden=false}}});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&cur!==null)closeA()});
+if(VIDEO.poster){var pi=new Image();pi.className='pimg';pi.src=VIDEO.poster;pi.alt='';$('vb').insertBefore(pi,$('vp'))}
+render();
+var old=window.__lang;window.__lang=function(i){if(old)old(i);render();if(cur!==null)openA(cur)};
+})();
+</script>
+<script>
+(function(){
+var $=function(i){return document.getElementById(i)},WA='https://wa.me/213797818235?text=';
+/* ===== آراء العملاء: زيد آراء حقيقية فقط. {stars:5, text:{ar:'..',fr:'..',en:'..'}, name:'..', src:'Instagram / WhatsApp / Facebook ...'} ===== */
+var REVIEWS=[];
+var L=function(a){return a};
+var H={rvk:['Que disent nos clients ? | شنو يقولو زبائننا؟','Que disent nos clients ?','What do our customers say?'],rvh:['Avis clients | آراء الزبائن','Avis clients','Customer reviews'],svk:['Nous sommes là pour vous | حنا هنا لخدمتك','Nous sommes là pour vous','We are here for you'],svh:['Comment pouvons-nous vous aider ? | كيف نقدر نعاونك؟','Comment pouvons-nous vous aider ?','How can we help you?']};
+var E={t:['آراء زبائننا الحقيقية تجي هنا قريباً. كنت زبون عندنا؟ شاركنا رأيك.','Les avis de nos clients s’afficheront ici bientôt. Vous avez commandé chez nous ? Partagez votre avis.','Our customers’ reviews will appear here soon. Ordered from us? Share your opinion.'],b:['شارك رأيك على واتساب','Partager mon avis sur WhatsApp','Share your review on WhatsApp'],m:['سلام، حبيت نشارك رأيي في منتجات Farmasi','Bonjour, je souhaite partager mon avis sur les produits Farmasi','Hello, I would like to share my review of Farmasi products']};
+var IC={wa:'<path d="M3 21l1.6-4.7A8.500 8.500 0 1 1 8 19.500L3 21z"/><path d="M9 9.500c.5 2.500 2.500 4.500 5 5.500l1.500-1.500-2-1-1 .8c-1-.5-1.800-1.300-2.300-2.300l.8-1-1-2L9 9.500z" fill="currentColor" stroke="none"/>',help:'<circle cx="12" cy="12" r="9"/><path d="M9.500 9.500a2.500 2.500 0 1 1 3.500 2.300c-.7.400-1 .9-1 1.700M12 17v.01"/>',track:'<path d="M3 7l9-4 9 4-9 4-9-4z"/><path d="M3 7v10l9 4 9-4V7M12 11v10"/>',ship:'<rect x="2" y="7" width="12" height="9" rx="1"/><path d="M14 10h4l3 3v3h-7M7 19.500a1.500 1.500 0 1 0 .01 0M17 19.500a1.500 1.500 0 1 0 .01 0"/>',faq:'<path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 9h8M8 12h5"/>'};
+var SV=[
+{ic:'wa',cls:'wa2',t:['تواصل معنا عبر واتساب','Nous contacter sur WhatsApp','Contact us on WhatsApp'],d:['اكتب لنا ونجاوبوك.','Écrivez-nous, nous vous répondons.','Write to us and we will reply.'],b:['افتح واتساب','Ouvrir WhatsApp','Open WhatsApp'],href:[WA+encodeURIComponent('سلام'),WA+encodeURIComponent('Bonjour'),WA+encodeURIComponent('Hello')]},
+{ic:'help',t:['مساعدة في اختيار المنتجات','Aide au choix des produits','Help choosing products'],d:['قولنا شنو تحتاج ونعاونوك تختار.','Dites-nous ce qu’il vous faut, nous vous aidons à choisir.','Tell us what you need and we will help you choose.'],b:['اطلب مساعدة','Demander de l’aide','Ask for help'],href:[WA+encodeURIComponent('سلام، حاب مساعدة في اختيار المنتجات'),WA+encodeURIComponent('Bonjour, j’aimerais de l’aide pour choisir des produits'),WA+encodeURIComponent('Hello, I would like help choosing products')]},
+{ic:'track',t:['متابعة الطلبات','Suivi des commandes','Order follow-up'],d:['سقسينا على طلبك عبر واتساب.','Renseignez-vous sur votre commande via WhatsApp.','Ask about your order on WhatsApp.'],b:['تابع طلبي','Suivre ma commande','Follow my order'],href:[WA+encodeURIComponent('سلام، حاب نتابع طلبي'),WA+encodeURIComponent('Bonjour, je souhaite suivre ma commande'),WA+encodeURIComponent('Hello, I would like to follow up on my order')]},
+{ic:'ship',t:['معلومات التوصيل','Informations de livraison','Delivery information'],d:['التوصيل لجميع الولايات الجزائرية. للمدة والتكلفة سقسينا على واتساب.','Livraison dans toutes les wilayas d’Algérie. Pour les délais et tarifs, écrivez-nous sur WhatsApp.','Delivery to all Algerian wilayas. For timing and cost, message us on WhatsApp.'],b:['اسأل عن التوصيل','Questions sur la livraison','Ask about delivery'],href:[WA+encodeURIComponent('سلام، حاب نعرف معلومات التوصيل لولايتي'),WA+encodeURIComponent('Bonjour, je souhaite des informations de livraison pour ma wilaya'),WA+encodeURIComponent('Hello, I would like delivery information for my wilaya')]},
+{ic:'faq',t:['الأسئلة الشائعة','Questions fréquentes','Frequently asked questions'],d:['أجوبة سريعة على أكثر الأسئلة.','Des réponses rapides aux questions courantes.','Quick answers to common questions.'],b:['شوف الأسئلة','Voir les questions','See the questions'],faq:1}
+];
+var FQ=[
+{q:['كيفاش نطلب؟','Comment commander ?','How do I order?'],a:['اختار المنتج وكليكي على +، عمّر معلوماتك في الفورم، وابعث الطلب على واتساب.','Choisissez le produit, cliquez sur +, remplissez le formulaire et envoyez la commande sur WhatsApp.','Pick a product, tap +, fill in the form and send the order on WhatsApp.']},
+{q:['كيفاش ندفع؟','Comment payer ?','How do I pay?'],a:['الدفع نقداً عند الاستلام.','Le paiement se fait en espèces à la réception.','Payment is in cash on delivery.']},
+{q:['واش توصلو لكل الولايات؟','Livrez-vous dans toutes les wilayas ?','Do you deliver to all wilayas?'],a:['نعم، التوصيل لجميع الولايات الجزائرية. للمدة والتكلفة سقسينا على واتساب.','Oui, dans toutes les wilayas d’Algérie. Pour les délais et tarifs, écrivez-nous sur WhatsApp.','Yes, to all Algerian wilayas. For timing and cost, message us on WhatsApp.']},
+{q:['وين نلقى الأسعار؟','Où trouver les prix ?','Where can I find prices?'],a:['السعر مكتوب تحت كل منتج بالدينار الجزائري.','Le prix est indiqué sous chaque produit, en dinars algériens.','The price is shown under each product, in Algerian dinars.']}
+];
+function li(){var l=document.documentElement.lang;return l==='fr'?1:l==='en'?2:0}
+function esc(t){return String(t).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function stars(n){n=Math.round(n);var h='';for(var k=1;k<=5;k++)h+=k<=n?'★':'<i>★</i>';return'<span class="st" aria-label="'+n+'/5">'+h+'</span>'}
+var idx=0,timer=null;
+function txt(o,i){return o[['ar','fr','en'][i]]||o.fr||o.ar||o.en||''}
+function sh(el,str,i){if(i===0&&str.indexOf(' | ')>0){var p=str.split(' | ');el.innerHTML='<span dir="ltr">'+p[0]+'</span><br><span dir="rtl">'+p[1]+'</span>'}else el.textContent=str}
+function renderR(){var i=li();sh($('rvk'),H.rvk[i],i);sh($('rvh'),H.rvh[i],i);
+var empty=!REVIEWS.length;$('rvw').hidden=empty;$('rve').hidden=!empty;$('rvs').innerHTML='';
+if(empty){$('rve').innerHTML='<span class="st">'+'<i>★★★★★</i></span><p>'+E.t[i]+'</p><a class="rb2" target="_blank" rel="noopener" href="'+WA+encodeURIComponent(E.m[i])+'">'+E.b[i]+'</a>';return}
+var avg=REVIEWS.reduce(function(a,r){return a+r.stars},0)/REVIEWS.length;
+$('rvs').className='rvs';$('rvs').innerHTML=stars(avg)+'<span dir="ltr">'+avg.toFixed(1)+' / 5 · '+REVIEWS.length+'</span>';
+$('rvt').innerHTML=REVIEWS.map(function(r){return'<div class="rcard"><div>'+stars(r.stars)+'<p>« '+esc(txt(r.text,i))+' »</p><span class="rn">'+esc(r.name)+'</span><span class="rsrc">'+esc(r.src||'')+'</span></div></div>'}).join('');
+$('rvd').innerHTML=REVIEWS.map(function(r,n){return'<button type="button" data-n="'+n+'" aria-label="'+(n+1)+'"></button>'}).join('');idx=0;mark();
+var multi=REVIEWS.length>1;$('rvp').hidden=$('rvn').hidden=$('rvd').hidden=!multi}
+function cw(){return $('rvt').clientWidth||1}
+function mark(){[].forEach.call($('rvd').children,function(b,n){b.classList.toggle('on',n===idx)})}
+function go(n){var t=$('rvt'),k=REVIEWS.length;if(!k)return;idx=(n+k)%k;var dir=getComputedStyle(t).direction==='rtl'?-1:1;t.scrollTo({left:dir*idx*cw(),behavior:'smooth'});mark()}
+function auto(){clearInterval(timer);if(REVIEWS.length>1)timer=setInterval(function(){go(idx+1)},5000)}
+$('rvt').addEventListener('scroll',function(){var n=Math.round(Math.abs($('rvt').scrollLeft)/cw());if(n!==idx&&n<REVIEWS.length){idx=n;mark()}},{passive:true});
+['touchstart','mousedown','pointerdown'].forEach(function(ev){$('rvt').addEventListener(ev,function(){clearInterval(timer)},{passive:true})});
+['touchend','mouseup','pointerup','mouseleave'].forEach(function(ev){$('rvt').addEventListener(ev,auto,{passive:true})});
+$('rvp').onclick=function(){go(idx-1);auto()};$('rvn').onclick=function(){go(idx+1);auto()};$('rvd').addEventListener('click',function(e){var b=e.target.closest('button');if(b){go(+b.dataset.n);auto()}});
+function renderS(){var i=li();sh($('svk'),H.svk[i],i);sh($('svh'),H.svh[i],i);
+$('svg').innerHTML=SV.map(function(s,n){var act=s.faq?'<button type="button" id="fqb" aria-expanded="false">'+s.b[i]+'</button>':'<a class="'+(s.cls||'')+'" target="_blank" rel="noopener" href="'+s.href[i]+'">'+s.b[i]+'</a>';return'<div class="sc2"><span class="si"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+IC[s.ic]+'</svg></span><h3>'+s.t[i]+'</h3><p>'+s.d[i]+'</p>'+act+'</div>'}).join('');
+$('faq').innerHTML=FQ.map(function(f){return'<details><summary>'+f.q[i]+'</summary><p>'+f.a[i]+'</p></details>'}).join('')}
+document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('#fqb');if(b){var f=$('faq');f.hidden=!f.hidden;b.setAttribute('aria-expanded',String(!f.hidden));if(!f.hidden)f.scrollIntoView({behavior:'smooth',block:'nearest'})}});
+function all(){renderR();renderS()}all();auto();
+var old=window.__lang;window.__lang=function(i){if(old)old(i);all()};
+})();
+</script>
+<script type="application/json" id="kdata">[{"g":"lips","l":"الشفايف","n":"Matte Liquid Lipstick","a":"روج سائل مات","d":"روج سائل بلون قوي وفيني مات مخملي، بيقمنت عالية الجودة، ملمس كريمي مريح ويدوم بزاف.","s":"4 ml","c":"","sh":[["01","Perfect Rose","1001409"],["02","Au Natural","1001410"],["03","Sunset Breeze","1001411"],["04","Retro Rose","1001412"],["05","Super Star","1001413"],["06","Red Love","1001414"],["07","Money Maker","1001415"],["08","Rose Dream","1001416"],["09","Wild Rose","1001417"],["10","Nude Essence","1001418"],["11","Mauve Pink","1001419"],["14","Brave","1001422"]],"pr":null,"pg":9,"im":"matte-liquid-lipstick.jpg","best":false},{"g":"lips","l":"الشفايف","n":"Creamy Lipstick","a":"روج كريمي","d":"روج كريمي يعطي لون بملمس ناعم ومريح، فيه زبدة الكوكوم والسكوالان وزبدة الكاريتي.","s":"4 g","c":"","sh":[["01","Country Rose","1001387"],["04","Plush Blush","1001390"],["05","Rosewood","1001391"],["06","Hot Cherry","1001392"],["07","Nude Pink","1001393"],["08","Spice","1001394"],["11","Birthday Chic","1001397"],["12","Paradise Pink","1001398"],["13","Ruby","1001399"],["15","Hot Tahiti","1001401"],["16","Barely Nude","1001402"]],"pr":null,"pg":11,"im":"creamy-lipstick.jpg","best":false},{"g":"lips","l":"الشفايف","n":"Tinted Lip Plumper","a":"غلوس منفّخ ملوّن","d":"غلوس يعطي لمعة فورية، فيه المنتول وزيت شجرة الشاي، إحساس بالانتعاش ويخلي الشفايف باينين معمّرين ولامعين.","s":"8 ml","c":"","sh":[["00","Glass","1001521"],["01","Fiery","1001497"],["02","Flirt","1001498"],["03","Lover","1001499"],["05","Merry Berry","1001501"],["06","Brown Sugar","1002601"],["07","Divine Rose","1002602"]],"pr":1200,"pg":13,"im":"tinted-lip-plumper.jpg","best":false},{"g":"lips","l":"الشفايف","n":"Ultimate Shine","a":"روج لامع Ultimate Shine","d":"روج كريمي لامع بملمس ناعم ومريح، فيه زبدة الكوكوم والسكوالان وزبدة الكاريتي.","s":"8 ml","c":"","sh":[["03","Crystal Sparkle","1001405"],["04","Pink Tourmaline","1001406"],["05","Lithium Quartz","1001407"],["06","Satin Pink","1001408"],["07","Glazed","1002306"],["08","Rouge Allure","1002307"]],"pr":null,"pg":14,"im":"ultimate-shine.jpg","best":false},{"g":"lips","l":"الشفايف","n":"Crayon à lèvres","a":"قلم تحديد الشفايف","d":"قلم أوتوماتيكي يحدد الشفايف بدقة ويطوّل ثبات الروج، فيه زيوت نباتية وفيتامين E.","s":"0,35 g","c":"","sh":[["02","Deep Red","1001462"],["04","Nude Pink","1001464"]],"pr":750,"pg":15,"im":"crayon-a-levres.jpg","best":false},{"g":"lips","l":"الشفايف","n":"Glowy Peptide Lip Balm","a":"مرطب شفايف بالببتيد","d":"بلسم شفايف يرطّب ويعطي نعومة ولمعة، فيه الببتيد والسكوالان وفيتامين E.","s":"10 ml","c":"","sh":[["01","Frosted Pink","1002605"],["04","Glazed Mocha","1002603"],["07","Toasted Cinnamon","1002607"],["08","Vanilla","1002609"]],"pr":null,"pg":17,"im":"glowy-peptide-lip-balm.jpg","best":false},{"g":"eyes","l":"العينين","n":"Intense Lift Mascara","a":"ماسكارا Intense Lift","d":"ماسكارا ترفع الرموش وتعطيهم حجم قوي وانحناء يدوم، والرموش تبقى خفاف ومحددين.","s":"11 ml","c":"1002596","sh":[],"pr":null,"pg":21,"im":"intense-lift-mascara.jpg","best":false},{"g":"eyes","l":"العينين","n":"Double Lash Extend Mascara","a":"ماسكارا بفرشاة مزدوجة","d":"ماسكارا بفرشاتين تعطي حجم وتحديد، رموش مفرّقين ومتساويين.","s":"12 ml","c":"1301518","sh":[],"pr":null,"pg":23,"im":"double-lash-extend-mascara.jpg","best":true},{"g":"eyes","l":"العينين","n":"Zen Mascara","a":"ماسكارا Zen","d":"ماسكارا خفيفة تعطي تحديد وحجم طبيعي، وتغذي الرموش بزيت الخروع.","s":"8 ml","c":"1301322","sh":[],"pr":null,"pg":23,"im":"zen-mascara.jpg","best":true},{"g":"eyes","l":"العينين","n":"Infinilash Mascara","a":"ماسكارا Infinilash","d":"ماسكارا تطوّل الرموش بإحساس خفيف، سوداء بزاف وما تسيلش.","s":"9 ml","c":"1001503","sh":[],"pr":null,"pg":25,"im":"infinilash-mascara.jpg","best":true},{"g":"eyes","l":"العينين","n":"Crayon Yeux","a":"قلم العين (كحل)","d":"قلم عين كريمي يحدد بدقة ونعومة، فيه زيت عباد الشمس وفيتامين E.","s":"0,35 g","c":"","sh":[["01","Black","1001451"],["02","Deep Brown","1001452"],["07","Dark Blue","1001457"],["09","Burgundy","1001459"],["10","Glitz Grey","1001460"]],"pr":null,"pg":27,"im":"crayon-yeux.jpg","best":false},{"g":"eyes","l":"العينين","n":"Ink Liner","a":"آيلاينر سائل Ink Liner","d":"آيلاينر سائل دقيق يرسم خطوط واضحة وقوية، ضد الماء وما يسيلش. (تركيبة جديدة)","s":"1,2 ml","c":"1002537","sh":[],"pr":null,"pg":29,"im":"ink-liner.jpg","best":false},{"g":"eyes","l":"العينين","n":"Oasis Collection – Desert Sands","a":"باليت ظلال Desert Sands","d":"باليت 9 ظلال عيون: مات، ميتاليك، صدفي ولامع.","s":"8,1 g","c":"1002485","sh":[],"pr":null,"pg":31,"im":"oasis-collection-desert-sands.jpg","best":true},{"g":"eyes","l":"العينين","n":"Oasis Collection – Rose Dune","a":"باليت ظلال Rose Dune","d":"باليت 9 ظلال عيون: مات، ميتاليك، صدفي ولامع.","s":"8,1 g","c":"1002486","sh":[],"pr":null,"pg":31,"im":"oasis-collection-rose-dune.jpg","best":false},{"g":"eyes","l":"العينين","n":"Mirage","a":"باليت ظلال Mirage","d":"باليت ظلال عيون بألوان مات مخملية وناعمة.","s":"8,1 g","c":"1002442","sh":[],"pr":null,"pg":32,"im":"mirage.jpg","best":false},{"g":"eyes","l":"العينين","n":"Violet Skies","a":"باليت ظلال Violet Skies","d":"باليت ظلال بلمسة بنفسجية تبرز العين.","s":"8,1 g","c":"1002353","sh":[],"pr":null,"pg":33,"im":"violet-skies.jpg","best":false},{"g":"eyes","l":"العينين","n":"Velvet Dusk","a":"باليت ظلال Velvet Dusk","d":"باليت ظلال بألوان ترابية دافية وباردة، لامعة ومات.","s":"8,1 g","c":"1002354","sh":[],"pr":null,"pg":33,"im":"velvet-dusk.jpg","best":false},{"g":"eyes","l":"العينين","n":"Precision Brow Pencil","a":"قلم الحواجب الدقيق","d":"قلم حواجب برأس رقيق بزاف للتحديد الدقيق، مع فرشاة باش تدمج للحصول على مظهر طبيعي.","s":"0,08 g","c":"","sh":[["01","Soft Brown","1002598"],["02","Medium Brown","1002599"],["03","Deep Brown","1002600"]],"pr":null,"pg":35,"im":"precision-brow-pencil.jpg","best":false},{"g":"eyes","l":"العينين","n":"Brow Setting Wax","a":"شمع تثبيت الحواجب","d":"شمع يشكّل ويثبّت الحواجب، فيه Capixyl™ وزيت اللوز.","s":"25 g","c":"1000930","sh":[],"pr":1300,"pg":36,"im":"brow-setting-wax.jpg","best":true},{"g":"eyes","l":"العينين","n":"Eyebrow & Lash Capixyl™ Serum","a":"سيروم الرموش والحواجب Capixyl™","d":"سيروم خفيف يحسّن مظهر الرموش والحواجب، فيه مركب الببتيد Capixyl™.","s":"12 ml","c":"1301292","sh":[],"pr":null,"pg":37,"im":"eyebrow-and-lash-capixyl-serum.jpg","best":true},{"g":"face","l":"الوجه","n":"VFX Pro Blur Primer","a":"برايمر VFX Pro مموّه","d":"برايمر خفيف يموّه الخطوط الرقيقة والعيوب، يخلي البشرة مات ويثبت المكياج. فيه فيتامين E.","s":"25 ml","c":"1001516","sh":[],"pr":null,"pg":40,"im":"vfx-pro-blur-primer.jpg","best":false},{"g":"face","l":"الوجه","n":"VFX Pro Illuminating Primer","a":"برايمر VFX Pro مضيء","d":"برايمر خفيف بجزيئات لامعة يعطي إشراقة طبيعية ويطوّل ثبات المكياج.","s":"25 ml","c":"1001517","sh":[],"pr":null,"pg":41,"im":"vfx-pro-illuminating-primer.jpg","best":false},{"g":"face","l":"الوجه","n":"VFX Pro Liquid Concealer","a":"كونسيلر سائل VFX Pro","d":"كونسيلر يغطي الهالات والعيوب ويضوّي البشرة، فيه مستخلصات بحرية ونباتية.","s":"6 ml","c":"","sh":[["C02","","1001376"],["C06","","1001380"],["N01","","1001375"],["N05","","1001379"],["W04","","1001378"]],"pr":null,"pg":42,"im":"vfx-pro-liquid-concealer.jpg","best":false},{"g":"face","l":"الوجه","n":"VFX Pro Camera Ready Foundation","a":"فون دو تان VFX Pro Camera Ready","d":"فون دو تان سائل يوحّد لون البشرة، بماء البحر، فيني مات مخملي.","s":"30 ml","c":"","sh":[["","Cool Ivory","1002024"],["","Ivory","1002025"],["","Medium Ivory","1002026"],["","Ecru","1002027"],["","Porcelain","1002028"],["","Cashmere","1002029"],["","Sand","1002030"],["","Warm Linen","1002031"],["","Golden Warm","1002032"],["","Buff","1002033"],["","Cashew","1002034"],["","Natural Beige","1002035"],["","Capuccino","1002036"],["","Wheat","1002037"],["","Medium Beige","1002038"],["","Tawny","1002039"],["","Almond","1002040"],["","Toffee","1002041"]],"pr":null,"pg":43,"im":"vfx-pro-camera-ready-foundation.jpg","best":false},{"g":"face","l":"الوجه","n":"CC Cream Color Correct","a":"كريم CC مصحّح اللون","d":"كريم CC خفيف يوحّد البشرة ويخفي الاحمرار والعيوب، تغطية قابلة للتدرج وفيني مات.","s":"30 ml","c":"","sh":[["01","Light","1001491"],["02","Light Medium","1001492"],["03","Medium","1001493"],["04","Medium to Tan","1001494"],["05","Tan","1001495"],["06","Deep","1001496"]],"pr":null,"pg":44,"im":"cc-cream-color-correct.jpg","best":false},{"g":"face","l":"الوجه","n":"BB Cream Beauty Balm","a":"كريم BB","d":"كريم BB خفيف بزاف، تغطية متوسطة وفيني طبيعي، يرطّب ويخفي العيوب.","s":"30 ml","c":"","sh":[["01","Light","1001485"],["02","Light to Medium","1001486"],["03","Medium","1001487"],["04","Medium to Tan","1001488"],["05","Tan","1001489"],["06","Deep","1001490"]],"pr":null,"pg":45,"im":"bb-cream-beauty-balm.jpg","best":false},{"g":"face","l":"الوجه","n":"BB Powder","a":"بودرة BB","d":"بودرة ملوّنة بتغطية خفيفة وفيني موحّد، ملمس ناعم كالحرير، تدوم.","s":"12 g","c":"","sh":[["01","Cool Light","1001346"],["02","Warm Light","1001347"],["03","Neutral Medium","1001348"],["04","Warm Medium","1001349"],["05","Cool Deep","1001350"],["06","Warm Deep","1001351"]],"pr":null,"pg":47,"im":"bb-powder.jpg","best":false},{"g":"face","l":"الوجه","n":"Contour Stick","a":"ستيك كونتور","d":"ستيك كريمي ينحّت ملامح الوجه ويندمج بسهولة، فيه زيت جوز الهند وفيتامين A و E.","s":"4,5 g","c":"","sh":[["","Smize","1001710"],["","Wink","1001709"]],"pr":1400,"pg":48,"im":"contour-stick.jpg","best":false},{"g":"face","l":"الوجه","n":"Blush Stick","a":"ستيك بلاش","d":"ستيك كريمي للخدود والشفايف، يعطي لون منعش وإشراقة طبيعية. فيه زبدة الكاريتي وزيت الأفوكا.","s":"4,5 g","c":"","sh":[["01","Joy","1001705"],["02","Play","1001706"],["03","Flirt","1001707"],["04","Fresh","1001708"]],"pr":1400,"pg":49,"im":"blush-stick.jpg","best":false},{"g":"face","l":"الوجه","n":"All In One Palette Fair to Medium","a":"باليت الوجه الكل في واحد (فاتح لمتوسط)","d":"باليت فيها بلاش وبرونزر وهايلايتر في علبة وحدة، بالسكوالان ومضادات الأكسدة.","s":"13 g","c":"1002157","sh":[],"pr":null,"pg":51,"im":"all-in-one-palette-fair-to-medium.jpg","best":false},{"g":"face","l":"الوجه","n":"All In One Palette Medium to Deep","a":"باليت الوجه الكل في واحد (متوسط لغامق)","d":"باليت فيها بلاش وبرونزر وهايلايتر في علبة وحدة، بالسكوالان ومضادات الأكسدة.","s":"13 g","c":"1002161","sh":[],"pr":null,"pg":51,"im":"all-in-one-palette-medium-to-deep.jpg","best":false},{"g":"face","l":"الوجه","n":"Peach Perfect Palette","a":"باليت Peach Perfect","d":"باليت بلاش وبرونزر وهايلايتر بألوان متناسقة.","s":"13 g","c":"1002156","sh":[],"pr":null,"pg":52,"im":"peach-perfect-palette.jpg","best":true},{"g":"face","l":"الوجه","n":"Effortless Glow Palette","a":"باليت هايلايتر Effortless Glow","d":"باليت هايلايتر تعطي إشراقة متعددة الأبعاد وفيني لامع.","s":"13 g","c":"1002163","sh":[],"pr":null,"pg":53,"im":"effortless-glow-palette.jpg","best":false},{"g":"face","l":"الوجه","n":"VFX Pro Time Locker Fixing Spray","a":"سبراي تثبيت المكياج VFX Pro Time Locker","d":"سبراي خفيف يطوّل ثبات المكياج طول النهار بلا ما يحجّر ولا يخلي بقايا.","s":"125 ml (4,2 fl oz)","c":"1001519","sh":[],"pr":1500,"pg":54,"im":"vfx-pro-time-locker-fixing-spray.jpg","best":false},{"g":"tools","l":"إكسسوارات","n":"Pinceau Eyeliner","a":"فرشاة آيلاينر","d":"","s":"","c":"9000940","sh":[],"pr":null,"pg":55,"im":"pinceau-eyeliner.jpg","best":false},{"g":"tools","l":"إكسسوارات","n":"Pinceau Définition Plat","a":"فرشاة تحديد مسطحة","d":"","s":"","c":"9000941","sh":[],"pr":null,"pg":55,"im":"pinceau-definition-plat.jpg","best":false},{"g":"tools","l":"إكسسوارات","n":"Pinceau Estompeur","a":"فرشاة دمج الظلال","d":"","s":"","c":"9000939","sh":[],"pr":null,"pg":55,"im":"pinceau-estompeur.jpg","best":false},{"g":"tools","l":"إكسسوارات","n":"Pinceau Ombreur","a":"فرشاة ظلال العيون","d":"","s":"","c":"9000938","sh":[],"pr":null,"pg":55,"im":"pinceau-ombreur.jpg","best":false},{"g":"tools","l":"إكسسوارات","n":"Pinceau Creux de Paupière Biseauté","a":"فرشاة مائلة لثنية الجفن","d":"","s":"","c":"9000937","sh":[],"pr":null,"pg":55,"im":"pinceau-creux-de-paupiere-biseaute.jpg","best":false},{"g":"tools","l":"إكسسوارات","n":"Pinceau Correcteur","a":"فرشاة الكونسيلر","d":"","s":"","c":"9000936","sh":[],"pr":null,"pg":55,"im":"pinceau-correcteur.jpg","best":false},{"g":"tools","l":"إكسسوارات","n":"Pinceau Illuminateur Biseauté","a":"فرشاة هايلايتر مائلة","d":"","s":"","c":"9000933","sh":[],"pr":null,"pg":55,"im":"pinceau-illuminateur-biseaute.jpg","best":false},{"g":"tools","l":"إكسسوارات","n":"Pinceau Fond de Teint","a":"فرشاة فون دو تان","d":"","s":"","c":"9000934","sh":[],"pr":null,"pg":55,"im":"pinceau-fond-de-teint.jpg","best":false},{"g":"tools","l":"إكسسوارات","n":"Pinceau Blush et Poudre","a":"فرشاة البلاش والبودرة","d":"","s":"","c":"9000935","sh":[],"pr":null,"pg":55,"im":"pinceau-blush-et-poudre.jpg","best":false},{"g":"tools","l":"إكسسوارات","n":"Éponge Teint Estompeuse","a":"إسفنجة دمج المكياج","d":"","s":"","c":"9000942","sh":[],"pr":null,"pg":55,"im":"eponge-teint-estompeuse.jpg","best":false},{"g":"perf","l":"عطور نسائية","n":"Hera Eau de Parfum","a":"عطر Hera للنساء","d":"مقدمة: كشمش، يوسفي ونيرولي · قلب: ياسمين، زهر البرتقال ونفحات خشبية · قاعدة: عنبر، فول التونكا ومسك.","s":"65 ml","c":"1107491","sh":[],"pr":null,"pg":57,"im":"hera-eau-de-parfum.jpg","best":false},{"g":"perf","l":"عطور نسائية","n":"Her Passion Eau de Parfum","a":"عطر Her Passion للنساء","d":"مقدمة: برغموت ونفحات فواكه · قلب: ياسمين، زهر البرتقال ونفحات خشبية · قاعدة: أرز، عنبر، كراميل ومسك.","s":"60 ml","c":"1000490","sh":[],"pr":null,"pg":57,"im":"her-passion-eau-de-parfum.jpg","best":true},{"g":"perf","l":"عطور رجالية","n":"Baoli Eau de Parfum","a":"عطر Baoli للرجال","d":"مقدمة: لافندر، مريمية وبرتقال مر · قلب: نفحات خضراء، تنوب وزنبق الوادي · قاعدة: طحلب البلوط، فيتيفر ونفحات عنبرية.","s":"90 ml","c":"1107522","sh":[],"pr":null,"pg":59,"im":"baoli-eau-de-parfum.jpg","best":false},{"g":"perf","l":"عطور رجالية","n":"His Power Eau de Parfum","a":"عطر His Power للرجال","d":"مقدمة: يوسفي، زنجبيل وأناناس · قلب: قرفة، صندل ولافندر · قاعدة: مسك، عنبر، فانيليا وقهوة.","s":"100 ml","c":"1000489","sh":[],"pr":null,"pg":59,"im":"his-power-eau-de-parfum.jpg","best":true},{"g":"perf","l":"عطور رجالية","n":"Shooter's Man","a":"عطر Shooter's Man للرجال","d":"مقدمة: برتقال، ليمون، برقوق، جوزة الطيب وجريب فروت · قلب: أرز، لافندر ونفحات مائية · قاعدة: مسك، فانيليا، جوز، خشب أبيض وتونكا.","s":"100 ml","c":"1000674","sh":[],"pr":null,"pg":59,"im":"shooters-man.jpg","best":false},{"g":"perf","l":"Masculine Collection","n":"Masculine Eau de Parfum","a":"عطر Masculine للرجال","d":"مقدمة: هيل · قلب: خشب فلفلي · قاعدة: عنبر وخشب العود.","s":"100 ml","c":"1001834","sh":[],"pr":null,"pg":60,"im":"masculine-eau-de-parfum.jpg","best":false},{"g":"perf","l":"Masculine Collection","n":"Masculine Shampooing & Gel Douche","a":"Masculine شامبو وجل استحمام","d":"شامبو وجل دوش 2 في 1 للرجال بعطر Masculine.","s":"100 ml","c":"1001832","sh":[],"pr":null,"pg":60,"im":"masculine-shampooing-and-gel-douche.jpg","best":false},{"g":"perf","l":"Masculine Collection","n":"Masculine Baume Après-Rasage","a":"Masculine بلسم ما بعد الحلاقة","d":"بلسم بعد الحلاقة للرجال بعطر Masculine.","s":"100 g","c":"1001835","sh":[],"pr":null,"pg":60,"im":"masculine-baume-apres-rasage.jpg","best":false},{"g":"perf","l":"Masculine Collection","n":"Masculine Savon Liquide Mains","a":"Masculine صابون سائل لليدين","d":"صابون سائل لليدين بعطر Masculine.","s":"325 ml","c":"1001830","sh":[],"pr":null,"pg":61,"im":"masculine-savon-liquide-mains.jpg","best":false},{"g":"perf","l":"Masculine Collection","n":"Masculine Cire Coiffante","a":"Masculine شمع تصفيف الشعر","d":"شمع تسريح الشعر للرجال.","s":"225 ml","c":"1002510","sh":[],"pr":null,"pg":61,"im":"masculine-cire-coiffante.jpg","best":false},{"g":"perf","l":"Masculine Collection","n":"Masculine Déodorant Roll-On","a":"Masculine مزيل العرق رول أون","d":"ديودوران رول أون للرجال بعطر Masculine.","s":"360 ml","c":"1001833","sh":[],"pr":null,"pg":61,"im":"masculine-deodorant-roll-on.jpg","best":false},{"g":"body","l":"معجون الأسنان","n":"Whitening Toothpaste","a":"معجون أسنان مبيّض","d":"معجون بالفليور للاستعمال اليومي، فيه الألوفيرا، الجنسنغ، زيت شجرة الشاي وجذور السواك.","s":"112 g","c":"1000390","sh":[],"pr":null,"pg":62,"im":"whitening-toothpaste.jpg","best":true},{"g":"body","l":"الصابون","n":"Calendula Soap","a":"صابون الكاليندولا","d":"صابون تقليدي لكل أنواع البشرة.","s":"125 g","c":"1000329","sh":[],"pr":null,"pg":63,"im":"calendula-soap.jpg","best":false},{"g":"body","l":"الصابون","n":"Tea Tree Soap","a":"صابون شجرة الشاي","d":"صابون تقليدي لكل أنواع البشرة.","s":"125 g","c":"1000330","sh":[],"pr":null,"pg":63,"im":"tea-tree-soap.jpg","best":false},{"g":"tuna","l":"Resurface (التجاعيد · +35 سنة)","n":"Resurface Refining Cleanser","a":"غسول الوجه Resurface","d":"غسول ينظف البشرة بلا ما ينشفها، يخليها أنعم وموحدة. فيه الريتينول والنياسيناميد.","s":"100 ml","c":"1000277","sh":[],"pr":null,"pg":74,"im":"resurface-refining-cleanser.jpg","best":false},{"g":"tuna","l":"Resurface (التجاعيد · +35 سنة)","n":"Resurface Hydrasooth Essence","a":"تونيك/إيسنس Resurface","d":"إيسنس مهدّئ يحافظ على رطوبة البشرة ونضارتها.","s":"100 ml","c":"1000278","sh":[],"pr":null,"pg":74,"im":"resurface-hydrasooth-essence.jpg","best":false},{"g":"tuna","l":"Resurface (التجاعيد · +35 سنة)","n":"Resurface Advanced Eye Cream","a":"كريم محيط العين Resurface","d":"كريم متطور لمحيط العين يرطّب وينعّم ويقلل الخطوط الرقيقة مع الوقت.","s":"15 ml","c":"1000282","sh":[],"pr":null,"pg":75,"im":"resurface-advanced-eye-cream.jpg","best":false},{"g":"tuna","l":"Resurface (التجاعيد · +35 سنة)","n":"Resurface Essential Day Cream","a":"كريم النهار Resurface","d":"كريم نهار سريع الامتصاص يرطّب ويحسّن علامات التقدم في السن.","s":"50 ml","c":"1000280","sh":[],"pr":null,"pg":76,"im":"resurface-essential-day-cream.jpg","best":true},{"g":"tuna","l":"Resurface (التجاعيد · +35 سنة)","n":"Resurface Retinol Reviving Serum","a":"سيروم الريتينول Resurface","d":"سيروم بالريتينول يرطّب وينعّم ويخلي البشرة موحدة ومضيئة.","s":"30 ml","c":"1000279","sh":[],"pr":null,"pg":76,"im":"resurface-retinol-reviving-serum.jpg","best":false},{"g":"tuna","l":"Resurface (التجاعيد · +35 سنة)","n":"Resurface Reset Night Cream","a":"كريم الليل Resurface","d":"كريم ليل يحسّن الشد والرطوبة والمرونة.","s":"50 ml","c":"1000551","sh":[],"pr":null,"pg":77,"im":"resurface-reset-night-cream.jpg","best":false},{"g":"tuna","l":"Age Reversist (أولى علامات العمر · +25 سنة)","n":"Age Reversist Exfoliating Cleanser","a":"غسول مقشّر Age Reversist","d":"غسول بحبيبات صغيرة ينحّي الشوائب ويخلي البشرة ناعمة ومضيئة.","s":"80 ml","c":"1000276","sh":[],"pr":null,"pg":80,"im":"age-reversist-exfoliating-cleanser.jpg","best":false},{"g":"tuna","l":"Age Reversist (أولى علامات العمر · +25 سنة)","n":"Age Reversist Beauty Essence Tonic","a":"تونيك Age Reversist","d":"تونيك لطيف ينحّي بقايا المكياج ويرطّب ويهدّئ البشرة.","s":"100 ml","c":"1000270","sh":[],"pr":null,"pg":80,"im":"age-reversist-beauty-essence-tonic.jpg","best":false},{"g":"tuna","l":"Age Reversist (أولى علامات العمر · +25 سنة)","n":"Age Reversist Eye Cream","a":"كريم محيط العين Age Reversist","d":"كريم يرطّب محيط العين وينعّم الخطوط الرقيقة.","s":"15 ml","c":"1000273","sh":[],"pr":null,"pg":81,"im":"age-reversist-eye-cream.jpg","best":false},{"g":"tuna","l":"Age Reversist (أولى علامات العمر · +25 سنة)","n":"Age Reversist Serum","a":"سيروم Age Reversist","d":"سيروم يرطّب وينعّم الخطوط لبشرة مضيئة.","s":"30 ml","c":"1000272","sh":[],"pr":null,"pg":82,"im":"age-reversist-serum.jpg","best":false},{"g":"tuna","l":"Age Reversist (أولى علامات العمر · +25 سنة)","n":"Age Reversist Rich Moisturizer","a":"كريم مرطب غني Age Reversist","d":"كريم مرطب غني سريع الامتصاص، يخلي البشرة ناعمة ومشدودة.","s":"30 ml","c":"1000271","sh":[],"pr":null,"pg":82,"im":"age-reversist-rich-moisturizer.jpg","best":false},{"g":"tuna","l":"Age Reversist (أولى علامات العمر · +25 سنة)","n":"Age Reversist All Night Beauty Mask","a":"ماسك الليل Age Reversist","d":"ماسك ليلي يرطّب البشرة وأنتِ راقدة، وتنوضي ببشرة منتعشة.","s":"50 ml","c":"1000269","sh":[],"pr":null,"pg":83,"im":"age-reversist-all-night-beauty-mask.jpg","best":false},{"g":"tuna","l":"Age Reversist (أولى علامات العمر · +25 سنة)","n":"Age Reversist Instant Perfecting Cream","a":"كريم التحسين الفوري Age Reversist","d":"كريم بمستخلص البلانكتون البحري يحسّن مظهر البشرة فوراً. (30 كيس صغير)","s":"30 × 0,3 ml","c":"1000275","sh":[],"pr":null,"pg":83,"im":"age-reversist-instant-perfecting-cream.jpg","best":false},{"g":"tuna","l":"Lumi Radiance (التصبغات والبقع)","n":"Lumi Radiance Gel Cleanser","a":"جل غسول مفتّح Lumi Radiance","d":"جل غسول مفتّح للاستعمال اليومي، ينحّي الشوائب ويوحّد اللون.","s":"100 ml","c":"1000300","sh":[],"pr":null,"pg":86,"im":"lumi-radiance-gel-cleanser.jpg","best":false},{"g":"tuna","l":"Lumi Radiance (التصبغات والبقع)","n":"Lumi Radiance Brightening Toner","a":"تونيك مفتّح Lumi Radiance","d":"تونيك مفتّح ينحّي البقايا ويخلي البشرة منتعشة وناعمة.","s":"125 ml","c":"1000295","sh":[],"pr":null,"pg":86,"im":"lumi-radiance-brightening-toner.jpg","best":false},{"g":"tuna","l":"Lumi Radiance (التصبغات والبقع)","n":"Lumi Radiance Eye Balm","a":"بلسم محيط العين Lumi Radiance","d":"بلسم مفتّح لمحيط العين يقلل البقع ويرطّب.","s":"20 ml","c":"1000299","sh":[],"pr":null,"pg":87,"im":"lumi-radiance-eye-balm.jpg","best":false},{"g":"tuna","l":"Lumi Radiance (التصبغات والبقع)","n":"Lumi Radiance Brightening Serum","a":"سيروم مفتّح Lumi Radiance","d":"سيروم يقلل مظهر البقع ويرطّب ويوحّد لون البشرة.","s":"30 ml","c":"1000298","sh":[],"pr":null,"pg":88,"im":"lumi-radiance-brightening-serum.jpg","best":false},{"g":"tuna","l":"Lumi Radiance (التصبغات والبقع)","n":"Lumi Radiance Brightening Cream SPF 22","a":"كريم مفتّح Lumi Radiance بحماية SPF 22","d":"كريم مفتّح بحماية من الشمس، يضوّي البشرة ويرطّبها.","s":"50 ml","c":"1000297","sh":[],"pr":null,"pg":88,"im":"lumi-radiance-brightening-cream-spf-22.jpg","best":true},{"g":"tuna","l":"Aqua (الترطيب · بشرة عادية لجافة)","n":"Aqua Restoring Gel Cleanser","a":"جل غسول Aqua","d":"جل غسول لطيف ينحّي الشوائب ويخلي البشرة نظيفة ومنتعشة.","s":"100 ml","c":"1000265","sh":[],"pr":null,"pg":92,"im":"aqua-restoring-gel-cleanser.jpg","best":false},{"g":"tuna","l":"Aqua (الترطيب · بشرة عادية لجافة)","n":"Aqua Boosting Hydra Drops","a":"سيروم مرطّب Aqua Hydra Drops","d":"سيروم مرطّب بحمض الهيالورونيك يحافظ على رطوبة البشرة ويحميها.","s":"30 ml","c":"1000266","sh":[],"pr":null,"pg":92,"im":"aqua-boosting-hydra-drops.jpg","best":false},{"g":"tuna","l":"Aqua (الترطيب · بشرة عادية لجافة)","n":"Aqua Revitalizing Eye Cream","a":"كريم محيط العين Aqua","d":"كريم منعش لمحيط العين يرطّب ويضوّي.","s":"20 ml","c":"1000268","sh":[],"pr":null,"pg":93,"im":"aqua-revitalizing-eye-cream.jpg","best":false},{"g":"tuna","l":"Aqua (الترطيب · بشرة عادية لجافة)","n":"Aqua Hydrating Cream","a":"كريم مرطب Aqua","d":"كريم مرطب بقوام جل، سريع الامتصاص، يخلي البشرة ناعمة ومضيئة.","s":"50 ml","c":"1000267","sh":[],"pr":null,"pg":93,"im":"aqua-hydrating-cream.jpg","best":false},{"g":"tuna","l":"Calendula (بشرة جافة وحساسة)","n":"Calendula Face Wash","a":"غسول الوجه بالكاليندولا","d":"جل غسول لطيف ينظّف بلا ما ينشّف، مثالي للبشرة الجافة والحساسة.","s":"100 ml","c":"1000283","sh":[],"pr":null,"pg":96,"im":"calendula-face-wash.jpg","best":false},{"g":"tuna","l":"Calendula (بشرة جافة وحساسة)","n":"Calendula Face Toner","a":"تونيك الكاليندولا","d":"تونيك لطيف للبشرة الجافة والحساسة، ينعش ويرطّب.","s":"125 ml","c":"1000284","sh":[],"pr":null,"pg":96,"im":"calendula-face-toner.jpg","best":false},{"g":"tuna","l":"Calendula (بشرة جافة وحساسة)","n":"Calendula Oil","a":"زيت الكاليندولا للوجه","d":"زيت للوجه يرطّب ويحمي البشرة من الجفاف.","s":"30 ml","c":"1000287","sh":[],"pr":null,"pg":96,"im":"calendula-oil.jpg","best":false},{"g":"tuna","l":"Calendula (بشرة جافة وحساسة)","n":"Calendula Face Cream","a":"كريم الوجه بالكاليندولا","d":"كريم يرطّب ويحمي البشرة من الجفاف.","s":"50 ml","c":"1000285","sh":[],"pr":null,"pg":97,"im":"calendula-face-cream.jpg","best":false},{"g":"tuna","l":"Calendula (بشرة جافة وحساسة)","n":"Calendula Cream Balsam","a":"بلسم كريمي بالكاليندولا","d":"بلسم كريمي يغذّي وينعّم البشرة الجافة والحساسة.","s":"80 ml","c":"1000286","sh":[],"pr":null,"pg":97,"im":"calendula-cream-balsam.jpg","best":true},{"g":"tuna","l":"Tea Tree (الدهون واللمعة · بشرة مختلطة لدهنية)","n":"Tea Tree Face Wash","a":"غسول الوجه بشجرة الشاي","d":"جل غسول للبشرة المختلطة والدهنية، ينحّي الشوائب ويقلل اللمعة.","s":"100 ml","c":"1000288","sh":[],"pr":null,"pg":100,"im":"tea-tree-face-wash.jpg","best":false},{"g":"tuna","l":"Tea Tree (الدهون واللمعة · بشرة مختلطة لدهنية)","n":"Tea Tree Face Toner","a":"تونيك شجرة الشاي","d":"تونيك ينعش البشرة ويقلل اللمعة والمسام بلا ما ينشّف.","s":"125 ml","c":"1000289","sh":[],"pr":null,"pg":100,"im":"tea-tree-face-toner.jpg","best":false},{"g":"tuna","l":"Tea Tree (الدهون واللمعة · بشرة مختلطة لدهنية)","n":"Tea Tree Face Cream","a":"كريم الوجه بشجرة الشاي","d":"كريم يقلل الدهون واللمعة ويخلي البشرة مات وموحدة.","s":"50 ml","c":"1000290","sh":[],"pr":950,"pg":101,"im":"tea-tree-face-cream.jpg","best":false},{"g":"tuna","l":"Tea Tree (الدهون واللمعة · بشرة مختلطة لدهنية)","n":"Tea Tree Cream Balsam","a":"بلسم كريمي بشجرة الشاي","d":"بلسم كريمي يرطّب وينعّم ويحمي البشرة من الجفاف.","s":"80 ml","c":"1000291","sh":[],"pr":null,"pg":102,"im":"tea-tree-cream-balsam.jpg","best":false},{"g":"tuna","l":"Tea Tree (الدهون واللمعة · بشرة مختلطة لدهنية)","n":"Tea Tree Serum","a":"سيروم شجرة الشاي","d":"سيروم ينقّي البشرة ويقلل آثار الحبوب.","s":"10 ml","c":"1000292","sh":[],"pr":null,"pg":102,"im":"tea-tree-serum.jpg","best":false},{"g":"treat","l":"ماء ميسيلار","n":"Dr. C. Tuna Micellar Water","a":"ماء ميسيلار","d":"ينحّي المكياج والشوائب بلا شطف، فيه ماء حراري وزيوت مغذية.","s":"225 ml","c":"1002189","sh":[],"pr":null,"pg":105,"im":"dr-c-tuna-micellar-water.jpg","best":false},{"g":"treat","l":"زيت متعدد الاستعمالات","n":"Absolute Super Elixir","a":"زيت Absolute Super Elixir","d":"زيت جاف للوجه والجسم والشعر، فيه 15 زيت ثمين (كاميليا، باوباب، أفوكا، لوز حلو...). يرطّب بلا دهون.","s":"25 ml","c":"1000991","sh":[],"pr":null,"pg":107,"im":"absolute-super-elixir.jpg","best":false},{"g":"treat","l":"فيتامين C","n":"Dr. C. Tuna Vitamin C Glow Serum","a":"سيروم فيتامين C","d":"سيروم بفيتامين C يضوّي البشرة ويوحّد اللون ويرطّب.","s":"30 ml","c":"1002167","sh":[],"pr":null,"pg":109,"im":"dr-c-tuna-vitamin-c-glow-serum.jpg","best":true},{"g":"treat","l":"مساج","n":"Dr. C. Tuna Paprika & Chili Balsam","a":"بلسم المساج بالفلفل الحار","d":"جل مساج بالفلفل الأحمر والزنجبيل والمنتول، يعطي إحساس بالسخانة والراحة.","s":"150 ml","c":"1000305","sh":[],"pr":null,"pg":111,"im":"dr-c-tuna-paprika-and-chili-balsam.jpg","best":true},{"g":"treat","l":"مساج","n":"Dr. C. Tuna Pferde Horse Chestnut Balsam","a":"بلسم المساج بكستناء الحصان","d":"جل مساج منعش بكستناء الحصان والنعناع والأرنيكا وإكليل الجبل.","s":"150 ml","c":"1000304","sh":[],"pr":null,"pg":111,"im":"dr-c-tuna-pferde-horse-chestnut-balsam.jpg","best":false},{"g":"hair","l":"Reviving (الثوم)","n":"Reviving Hair Oil","a":"زيت الشعر بالثوم Reviving","d":"زيت بمستخلص الثوم يقوّي الشعرة ويحسّن الشعر الضعيف، يعطي نعومة ولمعة.","s":"30 ml","c":"1000311","sh":[],"pr":null,"pg":113,"im":"reviving-hair-oil.jpg","best":false},{"g":"hair","l":"Reviving (الثوم)","n":"Reviving Shampoo","a":"شامبو الثوم Reviving","d":"شامبو منشّط ينظّف بلطف ويحسّن مظهر الشعر. فيه الثوم، Capixyl™ وTrichogen™.","s":"225 ml","c":"1000309","sh":[],"pr":null,"pg":113,"im":"reviving-shampoo.jpg","best":true},{"g":"hair","l":"Reviving (الثوم)","n":"Reviving Hair Mask","a":"ماسك الشعر Reviving","d":"ماسك خفيف يرطّب وينعّم الشعر بلا ما يثقّلو.","s":"200 ml","c":"1000310","sh":[],"pr":null,"pg":113,"im":"reviving-hair-mask.jpg","best":false},{"g":"hair","l":"Intensive Repair (الإصلاح)","n":"Intensive Repair Shampoo","a":"شامبو الإصلاح المكثف","d":"شامبو مصلح بالكيراتين النباتي يقوّي الشعر الضعيف.","s":"225 ml","c":"1000885","sh":[],"pr":null,"pg":115,"im":"intensive-repair-shampoo.jpg","best":false},{"g":"hair","l":"Intensive Repair (الإصلاح)","n":"Intensive Repair Hair Mask","a":"ماسك الإصلاح المكثف","d":"ماسك يصلح الشعر المتضرر ويعطي نعومة ولمعة.","s":"200 ml","c":"1000886","sh":[],"pr":null,"pg":115,"im":"intensive-repair-hair-mask.jpg","best":false},{"g":"hair","l":"Intensive Repair (الإصلاح)","n":"Intensive Repair Leave-in Conditioner","a":"بلسم بلا شطف للإصلاح المكثف","d":"بلسم بلا شطف يرطّب ويحمي الشعر من الجفاف.","s":"125 ml","c":"1000887","sh":[],"pr":null,"pg":115,"im":"intensive-repair-leave-in-conditioner.jpg","best":false}]</script>
+<script>
+(function(){
+/* ===== الكتالوغ الإلكتروني =====
+   المعطيات في <script id="kdata">: g=القسم، l=السلسلة، n=الإسم الأصلي، a=الإسم بالعربية، d=الوصف، s=الحجم، c=الكود،
+   sh=التيانت [رقم، إسم، كود]، pr=السعر بالدينار (null = السعر على واتساب)، pg=رقم الصفحة في الكتالوغ، im=الصورة
+   الصور: images/catalogue/products/  ·  صفحات الكتالوغ: images/catalogue/pages/ */
+var IMG='images/catalogue/products/',PAGES='images/catalogue/pages/',NPAGES=115,WA='https://wa.me/213797818235?text=';
+var D=JSON.parse(document.getElementById('kdata').textContent);
+var T={
+ sub:['كتالوج 2026','Catalogue 2026','Catalogue 2026'],
+ h:['الكتالوج الإلكتروني','Le catalogue en ligne','Online catalogue'],
+ p:['منتوج من كتالوج Farmasi، بالصور والألوان والكود','produits du catalogue Farmasi, avec photos, teintes et références','products from the Farmasi catalogue, with photos, shades and codes'],
+ fb:['تصفّح صفحات الكتالوج','Feuilleter le catalogue','Flip through the catalogue'],
+ hero:['تصفّح الكتالوج','Voir le catalogue','Browse catalogue'],
+ menu:['الكتالوج الإلكتروني','Catalogue en ligne','Online catalogue'],
+ ph:['ابحث في الكتالوج: إسم، نوع، كود...','Rechercher : nom, type, référence...','Search: name, type, code...'],
+ all:['الكل','Tout','All'],best:['الأكثر مبيعاً','Meilleures ventes','Best sellers'],
+ n:['منتوج','produits','products'],none:['ما لقينا حتى منتوج. جرّب كلمة أخرى ولا اسألنا على واتساب.','Aucun produit trouvé. Essayez un autre mot ou écrivez-nous sur WhatsApp.','No products found. Try another word or message us on WhatsApp.'],
+ ask:['السعر على واتساب','Prix sur demande','Price on request'],
+ sh:['تيانت','teintes','shades'],choose:['اختار اللون','Choisissez la teinte','Choose a shade'],
+ need:['اختار اللون قبل ما تطلب.','Choisissez une teinte avant de commander.','Please choose a shade first.'],
+ ord:['اطلب هذا المنتوج','Commander','Order this product'],q:['اسأل على واتساب','Question WhatsApp','Ask on WhatsApp'],
+ ref:['الكود','Réf.','Ref.'],page:['شوف الصفحة في الكتالوج','Voir la page du catalogue','See catalogue page'],
+ pg:['صفحة','Page','Page'],cl:['إغلاق','Fermer','Close'],prev:['السابق','Précédent','Previous'],next:['التالي','Suivant','Next'],
+ open:['فتح الصورة','Ouvrir l’image','Open image'],grp:['الكتالوج 2026','Catalogue 2026','Catalogue 2026'],
+ confirm:['السعر يتأكد على واتساب','prix confirmé sur WhatsApp','price confirmed on WhatsApp'],color:['اللون','Teinte','Shade']
+};
+var G=[['lips',['الشفايف','Lèvres','Lips']],['eyes',['العينين','Yeux','Eyes']],['face',['الوجه','Teint','Face']],['tools',['الفرش','Pinceaux','Brushes']],['perf',['العطور','Parfums','Fragrances']],['tuna',['Dr. C. Tuna للبشرة','Dr. C. Tuna visage','Dr. C. Tuna skincare']],['treat',['علاجات خاصة','Soins spécifiques','Special care']],['hair',['الشعر','Cheveux','Hair']],['body',['العناية الشخصية','Soins personnels','Personal care']]];
+var SEC=[[1,['الغلاف','Couverture','Cover']],[7,['الشفايف','Lèvres','Lips']],[19,['العينين','Yeux','Eyes']],[39,['الوجه','Teint','Face']],[55,['الفرش','Pinceaux','Brushes']],[57,['العطور','Parfums','Fragrances']],[62,['العناية الشخصية','Soins personnels','Personal care']],[65,['Dr. C. Tuna','Dr. C. Tuna','Dr. C. Tuna']],[104,['علاجات خاصة','Soins spécifiques','Special care']],[112,['الشعر','Cheveux','Hair']]];
+function $(i){return document.getElementById(i)}
+function L(){var l=document.documentElement.lang;return l==='fr'?1:l==='en'?2:0}
+function t(k){return T[k][L()]}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})}
+function lineName(it){var l=it.l,i=L();if(it.g==='lips'||it.g==='eyes'||it.g==='face'||it.g==='tools'){var g=G.filter(function(x){return x[0]===it.g})[0];return g[1][i]}if(!i)return l;var m=l.match(/^[A-Za-z][^(]*/);if(m)return m[0].trim();return ({'عطور نسائية':['Parfums femme','Women’s fragrances'],'عطور رجالية':['Parfums homme','Men’s fragrances'],'معجون الأسنان':['Dentifrice','Toothpaste'],'الصابون':['Savons','Soaps'],'ماء ميسيلار':['Eau micellaire','Micellar water'],'زيت متعدد الاستعمالات':['Huile multi-usage','Multi-use oil'],'فيتامين C':['Vitamine C','Vitamin C'],'مساج':['Massage','Massage']}[l]||[l,l])[i-1]}
+function title(it){return L()?it.n:it.a}
+function price(it){return it.pr?it.pr+(L()?' DA':' دج'):''}
+D.forEach(function(it,k){it.k=k;it.q=(it.a+' '+it.n+' '+it.l+' '+it.c+' '+it.s+' '+it.d+' '+it.sh.map(function(s){return s.join(' ')}).join(' ')).toLowerCase()});
+
+/* --- إضافة منتوجات الكتالوج لقائمة "المنتج" في نموذج الطلب (بدون ما نبدلو النظام) --- */
+var sel=$('prod'),og=document.createElement('optgroup');
+D.forEach(function(it){var o=document.createElement('option');it.opt=o;og.appendChild(o)});
+if(sel)sel.appendChild(og);
+function optText(){og.label=t('grp');D.forEach(function(it){var p=it.pr?it.pr+' دج':T.confirm[0];it.opt.value=it.a+' | '+it.n+(it.c?' · Réf '+it.c:'')+' ('+p+')';it.opt.textContent=title(it)+' - '+(it.pr?price(it):t('confirm'))})}
+
+/* --- القسم --- */
+var act='all',cq='',kg=$('kg'),kch=$('kch'),kq=$('kq');
+function chips(){var h='<button type="button" data-g="all">'+t('all')+'</button><button type="button" data-g="best">'+t('best')+'</button>';G.forEach(function(g){h+='<button type="button" data-g="'+g[0]+'">'+g[1][L()]+'</button>'});kch.innerHTML=h;mark()}
+function mark(){[].forEach.call(kch.children,function(b){b.classList.toggle('on',b.dataset.g===act)})}
+function list(){var s=cq.toLowerCase().trim().split(/\s+/).filter(Boolean);return D.filter(function(it){if(act==='best'&&!it.best)return false;if(act!=='all'&&act!=='best'&&it.g!==act)return false;return s.every(function(w){return it.q.indexOf(w)>-1})})}
+function card(it,eager){var sh=it.sh.length;return '<article class="kc" data-k="'+it.k+'" tabindex="0" role="button" aria-label="'+esc(title(it))+'">'+(it.best?'<span class="kbd">'+t('best')+'</span>':'')+'<img class="ki" src="'+IMG+it.im+'" alt="'+esc(title(it))+'" width="520" height="520" '+(eager?'':'loading="lazy" ')+'decoding="async"><div class="kb"><h3>'+esc(title(it))+'</h3>'+(L()?'':'<div class="ko">'+esc(it.n)+'</div>')+'<div class="km">'+esc(it.s)+(sh?' · '+sh+' '+t('sh'):'')+'</div><div class="kr">'+(it.pr?'<span class="kp">'+price(it)+'</span>':'<span class="kp q">'+t('ask')+'</span>')+'<button class="ka" type="button" tabindex="-1" aria-hidden="true">+</button></div></div></article>'}
+function render(){var r=list(),h='',last='';$('kcnt').textContent=r.length+' '+t('n');
+ if(!r.length){kg.innerHTML='<p class="kempty">'+t('none')+'</p>';return}
+ r.forEach(function(it,i){var ln=act==='best'||cq?'':lineName(it);if(ln&&ln!==last){h+='<h3 class="kh">'+esc(ln)+'</h3>';last=ln}h+=card(it,i<4)});kg.innerHTML=h}
+kch.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;act=b.dataset.g;mark();render()});
+var tmr;kq.addEventListener('input',function(){clearTimeout(tmr);tmr=setTimeout(function(){cq=kq.value;render()},120)});
+$('kqx').onclick=function(){kq.value='';cq='';render();kq.focus()};
+function search(v){kq.value=v||'';cq=kq.value;act='all';mark();render()}
+/* البحث الرئيسي في أعلى الصفحة يبحث في الكتالوج أيضاً */
+[['q2','qb2'],['q','qb']].forEach(function(p){var i=$(p[0]),b=$(p[1]);if(!i)return;if(b)b.addEventListener('click',function(){search(i.value)});i.addEventListener('keydown',function(e){if(e.key==='Enter')search(i.value)})});
+
+/* --- تفاصيل المنتوج --- */
+var kd=$('kd'),kdo=$('kdo'),cur=null,shade=-1;
+function sheet(){var it=cur,i=L(),h='<div class="gr"></div><button class="kx" type="button" aria-label="'+t('cl')+'">&times;</button><img class="kdi" src="'+IMG+it.im+'" alt="'+esc(title(it))+'"><h3>'+esc(title(it))+'</h3>'+(i?'':'<p class="kdn">'+esc(it.n)+'</p>')+'<div class="kdm">'+(it.s?'<span>'+esc(it.s)+'</span>':'')+(it.c?'<span dir="ltr">'+t('ref')+' '+esc(it.c)+'</span>':'')+'<span>'+esc(lineName(it))+'</span></div>'+(it.pr?'<p class="kdp">'+price(it)+'</p>':'<p class="kdp q">'+t('ask')+'</p>')+(i||!it.d?'':'<p class="kdd">'+esc(it.d)+'</p>');
+ if(it.sh.length){h+='<h4>'+t('choose')+' ('+it.sh.length+')</h4><div class="ksh">'+it.sh.map(function(s,j){return '<button type="button" data-s="'+j+'"'+(j===shade?' class="on"':'')+'>'+esc((s[0]+' '+s[1]).trim())+'<small>'+esc(s[2])+'</small></button>'}).join('')+'</div>'}
+ var wa=WA+encodeURIComponent((i===0?'سلام، حبيت نسأل على ':i===1?'Bonjour, une question sur ':'Hello, a question about ')+it.n+(it.c?' (Réf '+it.c+')':''));
+ h+='<p class="kerr" id="kerr" role="alert"></p><div class="pb"><button class="po" type="button" id="kord">'+t('ord')+'</button><a class="pq" target="_blank" rel="noopener" href="'+wa+'">'+t('q')+'</a></div><button class="kpg" type="button" data-pg="'+it.pg+'">'+t('page')+' · '+t('pg')+' '+it.pg+'</button>';
+ kd.innerHTML=h;kd.dir=i?'ltr':'rtl'}
+function open(k){cur=D[k];shade=cur.sh.length===1?0:-1;sheet();kdo.classList.add('on');kd.classList.add('on');kd.setAttribute('aria-hidden','false');document.body.classList.add('lock');kd.scrollTop=0}
+function close(){kdo.classList.remove('on');kd.classList.remove('on');kd.setAttribute('aria-hidden','true');if(!kv.classList.contains('on'))document.body.classList.remove('lock');cur=null}
+kg.addEventListener('click',function(e){var c=e.target.closest('.kc');if(c)open(+c.dataset.k)});
+kg.addEventListener('keydown',function(e){var c=e.target.closest('.kc');if(c&&(e.key==='Enter'||e.key===' ')){e.preventDefault();open(+c.dataset.k)}});
+kdo.onclick=close;
+kd.addEventListener('click',function(e){
+ if(e.target.closest('.kx')){close();return}
+ var s=e.target.closest('[data-s]');if(s){shade=+s.dataset.s;[].forEach.call(kd.querySelectorAll('[data-s]'),function(b){b.classList.toggle('on',b===s)});$('kerr').textContent='';return}
+ var p=e.target.closest('[data-pg]');if(p){viewer(+p.dataset.pg);return}
+ if(e.target.closest('#kord')){var it=cur;if(it.sh.length&&shade<0){$('kerr').textContent=t('need');var w=kd.querySelector('.ksh');if(w)w.scrollIntoView({behavior:'smooth',block:'center'});return}
+  /* نحط المنتوج في نموذج الطلب الموجود ونكتب اللون في الملاحظة */
+  if(sel){sel.value=it.opt.value}
+  var nt=$('nt');if(nt&&it.sh.length){var x=it.sh[shade];nt.value=T.color[0]+': '+(x[0]+' '+x[1]).trim()+' · Réf '+x[2]}
+  close();var od=$('order');if(od)od.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(function(){var q=$('qty');if(q)q.focus({preventScroll:true})},500)}
+});
+
+/* --- متصفح صفحات الكتالوج --- */
+var kv=$('kv'),kvt=$('kvt'),kvs=$('kvs'),pgN=1,built=false,hold=0;
+function buildV(){if(built)return;built=true;var h='';for(var n=1;n<=NPAGES;n++){var f=PAGES+'page-'+('00'+n).slice(-3)+'.jpg';h+='<div class="kvp"><img src="'+f+'" alt="'+n+'" loading="lazy" decoding="async" width="1100" height="1062"></div>'}kvt.innerHTML=h;
+ kvt.addEventListener('scroll',function(){if(Date.now()<hold)return;var n=Math.round(kvt.scrollLeft/kvt.clientWidth)+1;if(n!==pgN){pgN=n;lab()}},{passive:true})}
+function secs(){kvs.innerHTML=SEC.map(function(s){return '<option value="'+s[0]+'">'+s[1][L()]+' · '+s[0]+'</option>'}).join('')}
+function lab(){$('kvn').textContent=t('pg')+' '+pgN+' / '+NPAGES;$('kvo').href=PAGES+'page-'+('00'+pgN).slice(-3)+'.jpg';var v=1;SEC.forEach(function(s){if(pgN>=s[0])v=s[0]});kvs.value=v}
+function goP(n,smooth){hold=Date.now()+(smooth?700:150);pgN=Math.max(1,Math.min(NPAGES,n));kvt.scrollTo({left:(pgN-1)*kvt.clientWidth,behavior:smooth?'smooth':'auto'});lab()}
+function viewer(n){buildV();kv.classList.add('on');kv.setAttribute('aria-hidden','false');document.body.classList.add('lock');requestAnimationFrame(function(){goP(n||1,false)});$('kvx').focus()}
+function vclose(){kv.classList.remove('on');kv.setAttribute('aria-hidden','true');if(!kd.classList.contains('on'))document.body.classList.remove('lock')}
+$('kvx').onclick=vclose;$('kvprev').onclick=function(){goP(pgN-1,true)};$('kvnext').onclick=function(){goP(pgN+1,true)};
+kvs.onchange=function(){goP(+kvs.value,false)};
+$('kfb').onclick=function(){viewer(1)};
+window.addEventListener('resize',function(){if(kv.classList.contains('on'))goP(pgN,false)});
+document.addEventListener('keydown',function(e){if(kv.classList.contains('on')){if(e.key==='Escape')vclose();if(e.key==='ArrowRight')goP(pgN+1,true);if(e.key==='ArrowLeft')goP(pgN-1,true);return}if(e.key==='Escape'&&cur)close()});
+
+/* --- اللغات --- */
+function texts(){var i=L();$('ksub').textContent=t('sub');$('kh2').textContent=t('h');$('kp').textContent=D.length+' '+t('p');$('kfbl').textContent=t('fb');kq.placeholder=t('ph');$('kqx').setAttribute('aria-label',t('cl'));
+ var hb=$('kbtn');if(hb)hb.textContent=t('hero');var dm=$('kdml');if(dm)dm.textContent=t('menu');
+ $('kvx').setAttribute('aria-label',t('cl'));$('kvprev').setAttribute('aria-label',t('prev'));$('kvnext').setAttribute('aria-label',t('next'));$('kvo').setAttribute('aria-label',t('open'));
+ chips();optText();render();secs();lab();if(cur)sheet()}
+var old=window.__lang;window.__lang=function(i){if(old)old(i);setTimeout(texts,0)};
+texts();
+/* رابط مباشر: #catalog أو ?kat=lips */
+var m=location.search.match(/[?&]kat=(\w+)/);if(m&&G.some(function(g){return g[0]===m[1]})){act=m[1];mark();render()}
+})();
+</script>
+<style>
+/* ===== الطلب المباشر من الموقع ===== */
+.or{display:flex;align-items:center;gap:10px;margin:14px 0 0;color:var(--mute);font-size:13px}
+.or::before,.or::after{content:"";flex:1;height:1px;background:var(--line)}
+button.send2{display:block;width:100%;margin-top:12px;border:0;cursor:pointer;font:inherit;font-weight:800;background:var(--pink);color:#fff;padding:14px;border-radius:10px;text-align:center}
+button.send2[disabled]{opacity:.6;cursor:progress}
+.hpw{position:absolute;width:1px;height:1px;padding:0;border:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);opacity:0;pointer-events:none}
+.okb{margin-top:16px;padding:18px 16px;border-radius:14px;background:#effaf3;border:1.5px solid #25d366;text-align:center}
+.okb h3{margin:0 0 6px;font-size:18px;color:#137a3a}
+.okb p{margin:0 0 6px;line-height:1.8}
+.okb .ref{direction:ltr;display:inline-block;font-weight:800;letter-spacing:.08em;background:#fff;border-radius:8px;padding:2px 10px}
+.okb button{margin-top:8px;border:1.5px solid var(--pink);background:#fff;color:var(--pink);font:inherit;font-weight:700;border-radius:999px;padding:8px 18px;cursor:pointer}
+</style>
+<script>
+(function(){
+function $(i){return document.getElementById(i)}
+var btn=$('sendd'),box=$('okbox'),er=$('er');if(!btn)return;
+var T={
+ b:['أكّد الطلب ديراكت من الموقع','Confirmer la commande sur le site','Confirm order on the site'],
+ or:['ولا','ou','or'],
+ sending:['راه يتبعث...','Envoi...','Sending...'],
+ need:['عمّر الإسم، رقم الهاتف والولاية.','Remplissez le nom, le téléphone et la wilaya.','Please fill in name, phone and wilaya.'],
+ phone:['رقم الهاتف ماشي صحيح.','Numéro de téléphone invalide.','Invalid phone number.'],
+ fail:['ما قدرناش نبعثو الطلب. عاود جرب، ولا ابعثو على واتساب.','Envoi impossible. Réessayez ou commandez sur WhatsApp.','Could not send. Try again or order on WhatsApp.'],
+ okT:['✅ طلبك وصلنا!','✅ Commande reçue !','✅ Order received!'],
+ okP:['نعيطولك قريب باش نأكدو الطلب. الدفع عند الاستلام.','Nous vous appelons bientôt pour confirmer. Paiement à la livraison.','We will call you soon to confirm. Cash on delivery.'],
+ ref:['رقم الطلب:','N° de commande :','Order no.:'],
+ again:['طلب منتوج آخر','Commander un autre produit','Order another product']
+};
+function L(){var l=document.documentElement.lang;return l==='fr'?1:l==='en'?2:0}
+function t(k){return T[k][L()]}
+function texts(){btn.textContent=t('b');var o=$('ordor');if(o)o.textContent=t('or')}
+var old=window.__lang;window.__lang=function(i){if(old)old(i);setTimeout(texts,0)};texts();
+btn.addEventListener('click',function(){
+ var nm=$('nm').value.trim(),ph=$('ph').value.trim(),wl=$('wl').value.trim();
+ if(!nm||!ph||!wl){er.textContent=t('need');return}
+ if(ph.replace(/\D/g,'').length<9){er.textContent=t('phone');$('ph').focus();return}
+ er.textContent='';btn.disabled=true;btn.textContent=t('sending');
+ var body={product:$('prod').value,qty:$('qty').value||'1',name:nm,phone:ph,wilaya:wl,address:$('ad').value.trim(),note:$('nt').value.trim(),lang:document.documentElement.lang||'ar',website:$('hpw').value};
+ fetch('/api/order',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify(body)})
+ .then(function(r){return r.json().catch(function(){return{ok:false}})})
+ .then(function(d){
+  btn.disabled=false;texts();
+  if(!d||!d.ok){er.textContent=t('fail');return}
+  box.innerHTML='<h3>'+t('okT')+'</h3><p>'+t('okP')+'</p><p>'+t('ref')+' <span class="ref">'+String(d.ref||'').replace(/[^A-Z0-9]/gi,'')+'</span></p><button type="button" id="okagain">'+t('again')+'</button>';
+  box.hidden=false;box.scrollIntoView({behavior:'smooth',block:'center'});
+  $('okagain').onclick=function(){box.hidden=true;$('qty').value=1;$('nt').value='';var c=$('catalog')||$('products');if(c)c.scrollIntoView({behavior:'smooth'})};
+ })
+ .catch(function(){btn.disabled=false;texts();er.textContent=t('fail')});
+});
+})();
+</script>
+</body>
+</html>
