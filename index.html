@@ -3,6 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- FA-ANALYTICS:START — Google Analytics 4 + Microsoft Clarity (bloc unique, ne pas dupliquer) -->
+<script>
+(function () {
+  /* ===== Identifiants Farmasi Algérie ===== */
+  var GA4_ID = 'G-1T6B31SP8E';
+  var CLARITY_ID = 'zc6g8bkr6k';
+  /* ===================================================================== */
+
+  if (window.__faAnalytics) return;           // garde-fou : jamais chargé deux fois
+  window.__faAnalytics = true;
+
+  var gaOn = /^G-[A-Z0-9]{6,}$/.test(GA4_ID) && GA4_ID !== 'G-XXXXXXXXXX';
+  var clOn = /^[a-z0-9]{6,}$/i.test(CLARITY_ID) && CLARITY_ID !== 'YOUR_CLARITY_ID';
+
+  /* --- Google Analytics 4 --- */
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  if (gaOn && !document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) {
+    var g = document.createElement('script');
+    g.async = true;
+    g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+    document.head.appendChild(g);
+    gtag('js', new Date());
+    gtag('config', GA4_ID, {
+      allow_google_signals: false,              // pas de suivi publicitaire inter-appareils
+      allow_ad_personalization_signals: false
+    });
+  }
+
+  /* --- Microsoft Clarity --- */
+  if (clOn && !window.clarity) {
+    (function (c, l, a, r, i, t, y) {
+      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+    })(window, document, 'clarity', 'script', CLARITY_ID);
+  }
+
+  /* --- Envoi d'un événement aux deux outils (aucune donnée client) --- */
+  function track(name, params) {
+    try { if (gaOn) gtag('event', name, params || {}); } catch (e) {}
+    try { if (clOn && window.clarity) window.clarity('event', name); } catch (e) {}
+  }
+  window.faTrack = track;
+
+  function txt(root, sel) { var n = root && root.querySelector(sel); return n ? n.textContent.trim() : ''; }
+  function num(s) { var m = String(s || '').replace(/\s/g, '').match(/\d+/); return m ? +m[0] : 0; }
+  function item(name, price, qty) {
+    var it = { item_name: String(name || '').slice(0, 100), quantity: qty || 1 };
+    if (price) it.price = price;
+    return it;
+  }
+  /* Valeur du menu produit : "Nom (800 دج)" → nom + prix (le prix entre parenthèses à la fin) */
+  function fromOption(v) {
+    v = String(v || '');
+    var m = v.match(/\(([^()]*)\)\s*$/);
+    return { name: m ? v.slice(0, m.index).trim() : v.trim(), price: m ? num(m[1]) : 0 };
+  }
+
+  /* Seuls ces éléments sont lus : produit, prix, quantité, n° de commande.
+     Les champs nom, téléphone, wilaya, adresse et note ne sont JAMAIS lus. */
+
+  function init() {
+    var sel = document.getElementById('prod');
+
+    /* 1) Vue produit : ouverture d'une fiche (#pd = produits vedettes, #kd = catalogue) */
+    new MutationObserver(function (list) {
+      list.forEach(function (m) {
+        var el = m.target;
+        if (m.attributeName === 'aria-hidden' && (el.id === 'pd' || el.id === 'kd') &&
+            el.getAttribute('aria-hidden') === 'false' && m.oldValue !== 'false') {
+          var name = txt(el, 'h3');
+          var price = num(txt(el, el.id === 'pd' ? '.pp' : '.kdp'));
+          var p = { currency: 'DZD', items: [item(name, price)], source: el.id === 'pd' ? 'featured' : 'catalog' };
+          if (price) p.value = price;
+          track('view_item', p);
+        }
+        /* 3) Commande envoyée avec succès depuis le site : la boîte de confirmation apparaît */
+        if (m.attributeName === 'hidden' && el.id === 'okbox' && !el.hidden) {
+          var o = fromOption(sel && sel.value);
+          var qty = Math.max(1, parseInt((document.getElementById('qty') || {}).value, 10) || 1);
+          var ref = txt(el, '.ref').replace(/[^A-Z0-9]/gi, '');
+          var pp = { currency: 'DZD', items: [item(o.name, o.price, qty)], method: 'site' };
+          if (ref) pp.transaction_id = ref;
+          if (o.price) pp.value = o.price * qty;
+          track('purchase', pp);
+        }
+      });
+    }).observe(document.body, { subtree: true, attributes: true, attributeOldValue: true, attributeFilter: ['aria-hidden', 'hidden'] });
+
+    /* 2) Clics sur les boutons de commande (écouteur passif, après le code du site) */
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest ? e.target : e.target.parentElement;
+      if (!t) return;
+
+      // Bouton "+" d'un produit vedette, "اطلب هذا المنتج" (fiche vedette ou catalogue)
+      var add = t.closest('.p .add, #pdo1, #kord');
+      if (add) {
+        setTimeout(function () {             // laisse le site remplir le menu produit d'abord
+          var o = fromOption(sel && sel.value);
+          var p = { currency: 'DZD', items: [item(o.name, o.price)], button: add.id || 'card_plus' };
+          if (o.price) p.value = o.price;
+          track('add_to_cart', p);
+        }, 0);
+        return;
+      }
+
+      // "أرسل الطلب على واتساب" : compté seulement si le formulaire est valide (lien WhatsApp prêt)
+      var wa = t.closest('#send');
+      if (wa) {
+        if (!e.defaultPrevented && /^https:\/\/wa\.me\//.test(wa.getAttribute('href') || '')) {
+          var o1 = fromOption(sel && sel.value);
+          var q1 = Math.max(1, parseInt((document.getElementById('qty') || {}).value, 10) || 1);
+          var p1 = { currency: 'DZD', items: [item(o1.name, o1.price, q1)], method: 'whatsapp' };
+          if (o1.price) p1.value = o1.price * q1;
+          track('order_button_click', p1);
+        }
+        return;
+      }
+
+      // "أكّد الطلب ديراكت من الموقع" : compté seulement si le formulaire est valide (bouton passé en envoi)
+      var dd = t.closest('#sendd');
+      if (dd) {
+        if (!dd.disabled) return;
+        var o2 = fromOption(sel && sel.value);
+        var q2 = Math.max(1, parseInt((document.getElementById('qty') || {}).value, 10) || 1);
+        var p2 = { currency: 'DZD', items: [item(o2.name, o2.price, q2)], method: 'site' };
+        if (o2.price) p2.value = o2.price * q2;
+        track('order_button_click', p2);
+        return;
+      }
+
+      // Autres liens WhatsApp (questions sur un produit, service client)
+      var other = t.closest('a[href*="wa.me"]');
+      if (other) track('whatsapp_contact', {});
+    }, false);
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();
+</script>
+<!-- FA-ANALYTICS:END -->
 <link rel="icon" href="images/brand/logo.jpg"><title>فارماسي الجزائر</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Josefin+Sans:wght@400&family=Montserrat:wght@500&display=swap" rel="stylesheet">
@@ -273,7 +416,7 @@ section.sl{padding:14px 16px 6px}.trk{display:flex;overflow-x:auto;scroll-snap-t
   </ol>
 </section>
 
-<section id="order">
+<section id="order" data-clarity-mask="true">
   <p class="sub">الدفع عند الاستلام</p>
   <h2>معلومات الزبون</h2>
   <label class="f">المنتج<select id="prod"></select></label>
