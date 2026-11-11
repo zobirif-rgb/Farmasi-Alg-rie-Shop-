@@ -93,6 +93,26 @@
       });
     }).observe(document.body, { subtree: true, attributes: true, attributeOldValue: true, attributeFilter: ['aria-hidden', 'hidden'] });
 
+    /* 2a) Bouton WhatsApp "أرسل الطلب على واتساب".
+       Le site met le message complet du client (nom, téléphone, wilaya, adresse) dans le lien
+       wa.me au moment du clic. Pour que GA4 (clics sortants automatiques) et Clarity ne lisent
+       jamais ce lien : ce clic ne remonte pas jusqu'aux outils d'analyse, et le lien redevient
+       "#order" juste après l'ouverture de WhatsApp. Le message et l'ouverture de WhatsApp sont inchangés. */
+    var waBtn = document.getElementById('send');
+    if (waBtn) {
+      waBtn.addEventListener('click', function (e) {     // ajouté après celui du site → passe après lui
+        if (!e.defaultPrevented && /^https:\/\/wa\.me\//.test(waBtn.getAttribute('href') || '')) {
+          var o1 = fromOption(sel && sel.value);
+          var q1 = Math.max(1, parseInt((document.getElementById('qty') || {}).value, 10) || 1);
+          var p1 = { currency: 'DZD', items: [item(o1.name, o1.price, q1)], method: 'whatsapp' };
+          if (o1.price) p1.value = o1.price * q1;
+          track('order_button_click', p1);
+        }
+        e.stopPropagation();                            // n'empêche pas l'ouverture de WhatsApp
+        setTimeout(function () { waBtn.setAttribute('href', '#order'); }, 0);
+      });
+    }
+
     /* 2) Clics sur les boutons de commande (écouteur passif, après le code du site) */
     document.addEventListener('click', function (e) {
       var t = e.target.closest ? e.target : e.target.parentElement;
@@ -107,19 +127,6 @@
           if (o.price) p.value = o.price;
           track('add_to_cart', p);
         }, 0);
-        return;
-      }
-
-      // "أرسل الطلب على واتساب" : compté seulement si le formulaire est valide (lien WhatsApp prêt)
-      var wa = t.closest('#send');
-      if (wa) {
-        if (!e.defaultPrevented && /^https:\/\/wa\.me\//.test(wa.getAttribute('href') || '')) {
-          var o1 = fromOption(sel && sel.value);
-          var q1 = Math.max(1, parseInt((document.getElementById('qty') || {}).value, 10) || 1);
-          var p1 = { currency: 'DZD', items: [item(o1.name, o1.price, q1)], method: 'whatsapp' };
-          if (o1.price) p1.value = o1.price * q1;
-          track('order_button_click', p1);
-        }
         return;
       }
 
